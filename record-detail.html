@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mo Knives record detail page template for individual blade entries.">
+  <title>Mo Knives | Record Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/asset-fallbacks.css">
+  <link rel="stylesheet" href="assets/css/media-wrappers.css">
+  <link rel="stylesheet" href="assets/css/record-preview.css">
+  <link rel="stylesheet" href="assets/css/pages/record-detail.css">
+  <script src="assets/js/layout.js" defer></script>
+  <script src="assets/js/media-resolver.js" defer></script>
+</head>
+<body class="font-sans antialiased selection:bg-forge-accent selection:text-white w-full" data-page="vault">
+    <div id="site-header"></div>
+
+  <main class="record-page overflow-x-hidden">
+    <section class="record-page__hero">
+      <div class="record-page__hero-media">
+        <div data-record-hero></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/88 via-black/42 to-transparent"></div>
+        <div class="record-page__hero-copy">
+          <span class="record-page__eyebrow" data-record-tag>Record</span>
+          <h1 class="record-page__title" data-record-title>Record detail</h1>
+          <p class="record-page__meta" data-record-meta>World • Archived</p>
+        </div>
+      </div>
+      <aside class="space-y-5">
+        <section class="record-page__hero-card">
+          <span class="record-preview__label">Record Specifications</span>
+          <h2 class="record-preview__name" data-record-title>Record detail</h2>
+          <p class="record-preview__note" data-record-note>Archived specifications and build details.</p>
+          <div class="record-preview__rows">
+            <div class="record-preview__row"><span>World</span><strong data-record-world>Expedition</strong></div>
+            <div class="record-preview__row"><span>Status</span><strong data-record-status>Archived / Sold</strong></div>
+            <div class="record-preview__row"><span>Archive note</span><strong data-record-archive>Dimensions not verified</strong></div>
+          </div>
+        </section>
+        <section class="record-page__meta-card">
+          <span class="record-preview__label">Archive Record</span>
+          <p>This record preserves the complete visual and technical history of the piece.</p>
+        </section>
+      </aside>
+    </section>
+
+    <section class="record-page__body">
+      <div>
+        <div class="record-page__gallery" data-record-gallery></div>
+        <article class="record-page__story">
+          <h2>Use &amp; context</h2>
+          <p data-record-story>Record story and context appear here.</p>
+        </article>
+      </div>
+      <aside class="record-page__side">
+        <section class="record-page__side-card">
+          <h2>Archive Status</h2>
+          <div class="record-page__rows">
+            <div class="record-page__row"><span>Status</span><strong>Archived</strong></div>
+            <div class="record-page__row"><span>Documentation</span><strong>Verified</strong></div>
+          </div>
+        </section>
+        <section class="record-page__side-card">
+          <h2>Next step</h2>
+          <p>If this piece inspires your own build, begin the conversation to shape your next blade.</p>
+          <div class="mt-6"><a class="record-page__cta" data-record-request-link href="request-entry.html"><span data-record-request-label>Request Entry</span></a></div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <div class="record-lightbox" data-record-lightbox>
+    <div class="record-lightbox__inner">
+      <button class="record-lightbox__close" type="button" data-record-lightbox-close aria-label="Close fullscreen image">×</button>
+      <button class="record-lightbox__nav record-lightbox__nav--prev" type="button" data-record-lightbox-prev aria-label="Previous image">‹</button>
+      <img class="record-lightbox__img" data-record-lightbox-img src="" alt="">
+      <button class="record-lightbox__nav record-lightbox__nav--next" type="button" data-record-lightbox-next aria-label="Next image">›</button>
+      <div class="record-lightbox__caption" data-record-lightbox-caption></div>
+    </div>
+  </div>
+
+    <div id="site-footer"></div>
+  <script>
+    if (window.lucide && typeof window.lucide.createIcons === 'function') { lucide.createIcons(); }
+  </script>
+  <script src="assets/js/record-gallery-data.js"></script>
+  <script src="assets/js/record-detail.js"></script>
+  <script src="assets/js/photo-card-metadata.js"></script>
+</body>
+</html>
