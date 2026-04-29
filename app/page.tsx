@@ -10,6 +10,13 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ];
 
+const proofItems = [
+  'Field-first design logic',
+  'Thermal refinement for real use',
+  'Geometry tuned for contact',
+  'Proof before presentation',
+];
+
 export default function Home() {
   return (
     <main>
@@ -64,6 +71,12 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="proof-strip" aria-label="Mo Knives proof points">
+        <div className="container proof-grid">
+          {proofItems.map((item) => <span key={item}>{item}</span>)}
+        </div>
+      </section>
+
       <section id="why-mo" className="section">
         <div className="container split">
           <div>
@@ -101,6 +114,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section process-section">
+        <div className="container section-heading-center">
+          <p className="section-label">Process Proof</p>
+          <h2 className="section-title">Built in Stages, Proven in Contact</h2>
+          <p className="section-copy centered-copy">
+            Forging, grinding, heat treatment, sharpening, and testing are not decorative chapters. They are the controlled sequence that turns material into a dependable tool.
+          </p>
+        </div>
+        <div className="container process-gallery">
+          <figure className="media-card process-card">
+            <img src={asset('media/pages/why-mo/process/why-mo-process-grinding-desktop-v1.png')} alt="Grinding and process proof inside the Mo workshop" />
+          </figure>
+          <figure className="media-card process-card">
+            <img src={asset('media/pages/why-mo/process/why-mo-process-heat-treatment-desktop-v1.avif')} alt="Precision heat treatment detail" />
+          </figure>
+        </div>
+      </section>
+
       <section id="vault" className="section vault-section">
         <div className="container split">
           <div>
@@ -125,6 +156,15 @@ export default function Home() {
             <h2 className="section-title">Small Batch. Clear Purpose.</h2>
           </div>
           <div id="mo-gear" className="compact-note">Mo Gear and future drops will be expanded in the next migration pass.</div>
+        </div>
+      </section>
+
+      <section id="request" className="request-panel">
+        <div className="container request-inner">
+          <p className="section-label">Next Step</p>
+          <h2 className="section-title">Request Entry</h2>
+          <p className="section-copy centered-copy">A tighter request flow and dedicated form route will be migrated next.</p>
+          <a href="mailto:hello@moknives.com" className="button-primary">Contact Mo Knives</a>
         </div>
       </section>
 
