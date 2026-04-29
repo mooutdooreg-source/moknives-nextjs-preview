@@ -1,5 +1,15 @@
 const asset = (path: string) => `/assets/${path}`;
 
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'The Vault', href: '#vault' },
+  { label: 'Why Mo', href: '#why-mo' },
+  { label: 'Limited Drop', href: '#limited-drop' },
+  { label: 'Edge Academy', href: '#edge-academy' },
+  { label: 'Mo Gear', href: '#mo-gear' },
+  { label: 'Contact', href: '#contact' },
+];
+
 export default function Home() {
   return (
     <main>
@@ -19,10 +29,9 @@ export default function Home() {
           </a>
 
           <nav className="header-nav" aria-label="Primary navigation">
-            <a href="/" className="nav-link">Home</a>
-            <a href="#vault" className="nav-link">Vault</a>
-            <a href="#why-mo" className="nav-link">Why Mo</a>
-            <a href="#contact" className="nav-link">Contact</a>
+            {navItems.map((item) => (
+              <a key={item.label} href={item.href} className="nav-link">{item.label}</a>
+            ))}
           </nav>
 
           <a href="#request" className="request-button">Request Entry</a>
@@ -74,7 +83,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section alt">
+      <section className="section alt" id="edge-academy">
         <div className="container split reverse">
           <figure className="media-card">
             <video autoPlay muted loop playsInline preload="metadata" poster={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-poster-desktop-v1.jpg')}>
@@ -106,6 +115,16 @@ export default function Home() {
           <figure className="media-card wide">
             <img src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.avif')} alt="Mo Knives vault hero" />
           </figure>
+        </div>
+      </section>
+
+      <section id="limited-drop" className="section alt compact-section">
+        <div className="container compact-grid">
+          <div>
+            <p className="section-label">Limited Drop</p>
+            <h2 className="section-title">Small Batch. Clear Purpose.</h2>
+          </div>
+          <div id="mo-gear" className="compact-note">Mo Gear and future drops will be expanded in the next migration pass.</div>
         </div>
       </section>
 
