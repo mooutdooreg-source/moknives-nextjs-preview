@@ -17,6 +17,8 @@ const proofItems = [
   'Proof before presentation',
 ];
 
+const proofLoop = [...proofItems, ...proofItems, ...proofItems];
+
 export default function Home() {
   return (
     <main>
@@ -71,9 +73,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="proof-strip" aria-label="Mo Knives proof points">
-        <div className="container proof-grid">
-          {proofItems.map((item) => <span key={item}>{item}</span>)}
+      <section className="proof-strip proof-marquee" aria-label="Mo Knives proof points">
+        <div className="proof-marquee-track">
+          {proofLoop.map((item, index) => <span key={`${item}-${index}`}>{item}</span>)}
         </div>
       </section>
 
