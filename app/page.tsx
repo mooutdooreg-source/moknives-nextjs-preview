@@ -2,8 +2,8 @@ const asset = (path: string) => `/assets/${path}`;
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'The Vault', href: '#vault' },
-  { label: 'Why Mo', href: '#why-mo' },
+  { label: 'The Vault', href: '/the-vault' },
+  { label: 'Why Mo', href: '/why-mo' },
   { label: 'Limited Drop', href: '#limited-drop' },
   { label: 'Edge Academy', href: '#edge-academy' },
   { label: 'Mo Gear', href: '#mo-gear' },
@@ -118,7 +118,7 @@ export default function Home() {
 
           <div className="hero-actions">
             <a href="#request" className="button-primary">Request Entry</a>
-            <a href="#vault" className="button-secondary">Enter The Vault</a>
+            <a href="/the-vault" className="button-secondary">Enter The Vault</a>
           </div>
         </div>
       </section>
@@ -197,7 +197,7 @@ export default function Home() {
             <p className="section-copy">
               The Vault shows the real work that came out of this standard — the blades, the worlds they belong to, and the proof behind them.
             </p>
-            <a href="#request" className="button-primary section-cta">Request Entry</a>
+            <a href="/the-vault" className="button-primary section-cta">Enter The Vault</a>
           </div>
 
           <figure className="media-card wide">
