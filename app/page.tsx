@@ -24,45 +24,50 @@ type ProofIconName = typeof proofItems[number]['icon'];
 function ProofIcon({ name }: { name: ProofIconName }) {
   if (name === 'field') {
     return (
-      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-        <rect x="9" y="9" width="46" height="46" rx="6" />
-        <path d="M18 38c7-2 9-8 9-18" />
-        <path d="M20 21c5 1 9 0 13-4" />
-        <path d="M39 16v35" />
-        <path d="M28 51l11-25 11 25" />
-        <path d="M31 39h16" />
-        <circle cx="39" cy="22" r="3" />
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+        <path d="M10 48c8-8 16-12 26-13 8-1 14-5 18-12" />
+        <path d="M13 39c4-1 8-1 12 1" />
+        <path d="M23 28c5 2 10 2 16-1" />
+        <path d="M39 12v40" />
+        <path d="M26 52l13-30 13 30" />
+        <path d="M31 39h17" />
+        <circle cx="39" cy="18" r="4" />
+        <path d="M12 52h42" />
       </svg>
     );
   }
 
   if (name === 'fire') {
     return (
-      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-        <path d="M33 58c11-4 18-12 18-23 0-9-5-16-11-22 1 9-4 13-9 17 0-8-3-15-9-22 1 14-9 19-9 31 0 10 8 17 20 19z" />
-        <path d="M32 55c6-3 10-7 10-13 0-5-3-9-7-13 0 5-3 8-6 10 0-4-2-8-5-12 0 9-5 12-5 19 0 5 5 9 13 9z" />
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+        <path d="M33 57c12-5 19-13 19-24 0-10-5-17-13-25 1 10-4 15-10 19 0-8-3-15-10-21 1 15-8 21-8 33 0 10 8 17 22 18z" />
+        <path d="M32 53c6-3 10-8 10-14 0-5-3-10-7-14 0 6-3 9-7 12 0-5-2-9-6-14 1 9-5 14-5 21 0 5 5 9 15 9z" />
+        <path d="M23 55h19" />
       </svg>
     );
   }
 
   if (name === 'geometry') {
     return (
-      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-        <circle cx="32" cy="32" r="21" />
-        <path d="M32 6v14" />
-        <path d="M32 44v14" />
-        <path d="M6 32h14" />
-        <path d="M44 32h14" />
-        <path d="M18 18l28 28" />
-        <path d="M20 42c9-19 20-25 30-27-3 11-10 22-27 31" />
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="22" />
+        <path d="M32 6v13" />
+        <path d="M32 45v13" />
+        <path d="M6 32h13" />
+        <path d="M45 32h13" />
+        <path d="M17 46c13-22 24-31 35-34-3 13-12 27-34 36" />
+        <path d="M20 21l23 23" />
+        <path d="M25 44l-6 7" />
       </svg>
     );
   }
 
   return (
-    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-      <path d="M32 6l22 10v15c0 14-9 23-22 29C19 54 10 45 10 31V16L32 6z" />
-      <path d="M22 32l7 7 15-17" />
+    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+      <path d="M32 7l22 10v14c0 14-8 23-22 29C18 54 10 45 10 31V17L32 7z" />
+      <path d="M21 32l8 8 15-18" />
+      <path d="M22 51c4 3 7 5 10 6" />
+      <path d="M42 14l6 3" />
     </svg>
   );
 }
