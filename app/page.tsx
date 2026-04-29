@@ -1,3 +1,5 @@
+const asset = (path: string) => `/assets/${path}`;
+
 export default function Home() {
   return (
     <main>
@@ -11,25 +13,34 @@ export default function Home() {
         </div>
 
         <div className="header-row">
-          <div className="brand-lockup">
-            <div className="brand-mark">MG</div>
+          <a className="brand-lockup" href="/" aria-label="Mo Knives home">
+            <img className="brand-logo" src={asset('media/shared/brand/logo.svg')} alt="Mo Knives logo" />
             <span className="brand-name">Mo Knives</span>
-          </div>
+          </a>
 
-          <nav className="header-nav">
-            <a href="#" className="nav-link">Home</a>
-            <a href="#" className="nav-link">Vault</a>
-            <a href="#" className="nav-link">Why Mo</a>
-            <a href="#" className="nav-link">Contact</a>
+          <nav className="header-nav" aria-label="Primary navigation">
+            <a href="/" className="nav-link">Home</a>
+            <a href="#vault" className="nav-link">Vault</a>
+            <a href="#why-mo" className="nav-link">Why Mo</a>
+            <a href="#contact" className="nav-link">Contact</a>
           </nav>
 
-          <a href="#" className="request-button">Request Entry</a>
+          <a href="#request" className="request-button">Request Entry</a>
         </div>
       </header>
 
-      <section className="hero">
+      <section className="hero media-hero">
+        <img
+          className="hero-bg"
+          src={asset('media/pages/home/hero/home-hero-bg-desktop-v1.avif')}
+          alt="Mo Knives forge hero scene"
+        />
+        <div className="hero-overlay" />
         <div className="hero-inner">
-          <p className="eyebrow">American Bladesmith Society Member</p>
+          <p className="eyebrow badge-row">
+            <img src={asset('media/shared/brand/abs-member-badge.svg')} alt="American Bladesmith Society Member badge" />
+            American Bladesmith Society Member
+          </p>
           <h1 className="hero-title">
             Forging Your <span>Future History</span>
           </h1>
@@ -38,27 +49,67 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <a href="#" className="button-primary">Request Entry</a>
-            <a href="#" className="button-secondary">Enter The Vault</a>
+            <a href="#request" className="button-primary">Request Entry</a>
+            <a href="#vault" className="button-secondary">Enter The Vault</a>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section id="why-mo" className="section">
         <div className="container split">
           <div>
             <p className="section-label">Field Foundation</p>
             <h2 className="section-title">Before the Forge, There Was the Field</h2>
             <p className="section-copy">
-              Built from real use — not theory. Every blade begins where performance matters.
+              My work did not begin at the anvil. It began in the field — as a hunter, angler, and open-fire cook — shaped by the demanding reality of use.
+            </p>
+            <p className="section-copy">
+              Mo Knives exists where raw durability, disciplined craftsmanship, and purpose meet without pretense.
             </p>
           </div>
 
-          <div className="proof-card">Media placeholder (assets next step)</div>
+          <figure className="media-card tall">
+            <img src={asset('media/pages/why-mo/hero/why-mo-hero-main-desktop-v1.avif')} alt="Why Mo atmosphere and workshop origin" />
+          </figure>
         </div>
       </section>
 
-      <footer className="site-footer">
+      <section className="section alt">
+        <div className="container split reverse">
+          <figure className="media-card">
+            <video autoPlay muted loop playsInline preload="metadata" poster={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-poster-desktop-v1.jpg')}>
+              <source src={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-desktop-v1.mp4')} type="video/mp4" />
+            </video>
+          </figure>
+
+          <div>
+            <p className="section-label">Performance Proof</p>
+            <h2 className="section-title">No Theater. Only Performance.</h2>
+            <p className="section-copy">
+              Steel, heat treatment, and geometry only matter when performance confirms them. The bench, the stone, and the cut all have to agree before a theory earns trust.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="vault" className="section vault-section">
+        <div className="container split">
+          <div>
+            <p className="section-label">The Vault</p>
+            <h2 className="section-title">A Living Record of Functional Legacies</h2>
+            <p className="section-copy">
+              The Vault shows the real work that came out of this standard — the blades, the worlds they belong to, and the proof behind them.
+            </p>
+            <a href="#request" className="button-primary section-cta">Request Entry</a>
+          </div>
+
+          <figure className="media-card wide">
+            <img src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.avif')} alt="Mo Knives vault hero" />
+          </figure>
+        </div>
+      </section>
+
+      <footer id="contact" className="site-footer">
         <div className="footer-inner">
           <span>© {new Date().getFullYear()} Mo Knives</span>
           <span>Hand-Forged. Field-Proven.</span>
