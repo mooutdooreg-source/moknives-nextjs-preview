@@ -22,44 +22,49 @@ const proofLoop = [...proofItems, ...proofItems, ...proofItems];
 type ProofIconName = typeof proofItems[number]['icon'];
 
 function ProofIcon({ name }: { name: ProofIconName }) {
+  const stroke = '#D6A85A';
+
   if (name === 'field') {
     return (
-      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
-        <path d="M12 45c9-10 20-15 36-16" />
-        <path d="M18 35c7-5 15-8 27-9" />
-        <path d="M32 14v36" />
-        <path d="M20 50l12-24 12 24" />
-        <circle cx="32" cy="14" r="4" />
+      <svg viewBox="0 0 64 64" fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+        <path d="M32 8l24 14v24L32 60 8 46V22L32 8z" />
+        <path d="M16 43l10-15 7 10 6-8 9 13" />
+        <path d="M23 43h26" />
       </svg>
     );
   }
 
   if (name === 'fire') {
     return (
-      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
-        <path d="M34 56c11-5 17-13 17-23 0-8-4-15-11-23 1 9-4 14-10 18 0-8-3-14-9-20 1 14-8 20-8 31 0 10 8 17 21 17z" />
-        <path d="M33 52c5-3 8-7 8-12 0-4-2-8-6-12 0 5-3 8-7 10 0-4-2-8-5-11 0 8-4 11-4 17 0 5 5 8 14 8z" />
+      <svg viewBox="0 0 64 64" fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+        <path d="M18 54h28" />
+        <path d="M18 45h28" />
+        <path d="M20 45V26c0-7 5-12 12-12s12 5 12 12v19" />
+        <path d="M24 45V27c0-5 3-9 8-9s8 4 8 9v18" />
+        <path d="M32 41c5-3 8-7 8-13 0-5-3-9-7-14 0 6-3 9-6 12 0-4-2-8-5-12 0 10-6 14-6 22 0 5 5 8 16 5z" />
       </svg>
     );
   }
 
   if (name === 'geometry') {
     return (
-      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+      <svg viewBox="0 0 64 64" fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
         <circle cx="32" cy="32" r="22" />
-        <path d="M32 8v12" />
-        <path d="M32 44v12" />
-        <path d="M8 32h12" />
-        <path d="M44 32h12" />
-        <path d="M18 43c11-17 22-25 35-30-5 13-14 25-31 34" />
+        <path d="M17 45L48 14" />
+        <path d="M24 50l12-31 14-5-5 14-31 12z" />
+        <path d="M18 45l11 11" />
       </svg>
     );
   }
 
   return (
-    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+    <svg viewBox="0 0 64 64" fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
       <path d="M32 8l21 9v15c0 13-8 22-21 28-13-6-21-15-21-28V17l21-9z" />
-      <path d="M22 33l8 8 16-19" />
+      <path d="M23 33l7 7 15-18" />
+      <path d="M23 18v27" opacity="0.5" />
+      <path d="M29 15v35" opacity="0.5" />
+      <path d="M35 15v35" opacity="0.5" />
+      <path d="M41 18v27" opacity="0.5" />
     </svg>
   );
 }
