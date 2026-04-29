@@ -11,13 +11,61 @@ const navItems = [
 ];
 
 const proofItems = [
-  'Field-first design logic',
-  'Thermal refinement for real use',
-  'Geometry tuned for contact',
-  'Proof before presentation',
-];
+  { label: 'Field-first design logic', icon: 'field' },
+  { label: 'Thermal refinement for real use', icon: 'fire' },
+  { label: 'Geometry tuned for contact', icon: 'geometry' },
+  { label: 'Proof before presentation', icon: 'proof' },
+] as const;
 
 const proofLoop = [...proofItems, ...proofItems, ...proofItems];
+
+type ProofIconName = typeof proofItems[number]['icon'];
+
+function ProofIcon({ name }: { name: ProofIconName }) {
+  if (name === 'field') {
+    return (
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect x="9" y="9" width="46" height="46" rx="6" />
+        <path d="M18 38c7-2 9-8 9-18" />
+        <path d="M20 21c5 1 9 0 13-4" />
+        <path d="M39 16v35" />
+        <path d="M28 51l11-25 11 25" />
+        <path d="M31 39h16" />
+        <circle cx="39" cy="22" r="3" />
+      </svg>
+    );
+  }
+
+  if (name === 'fire') {
+    return (
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path d="M33 58c11-4 18-12 18-23 0-9-5-16-11-22 1 9-4 13-9 17 0-8-3-15-9-22 1 14-9 19-9 31 0 10 8 17 20 19z" />
+        <path d="M32 55c6-3 10-7 10-13 0-5-3-9-7-13 0 5-3 8-6 10 0-4-2-8-5-12 0 9-5 12-5 19 0 5 5 9 13 9z" />
+      </svg>
+    );
+  }
+
+  if (name === 'geometry') {
+    return (
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="21" />
+        <path d="M32 6v14" />
+        <path d="M32 44v14" />
+        <path d="M6 32h14" />
+        <path d="M44 32h14" />
+        <path d="M18 18l28 28" />
+        <path d="M20 42c9-19 20-25 30-27-3 11-10 22-27 31" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <path d="M32 6l22 10v15c0 14-9 23-22 29C19 54 10 45 10 31V16L32 6z" />
+      <path d="M22 32l7 7 15-17" />
+    </svg>
+  );
+}
 
 export default function Home() {
   return (
@@ -75,7 +123,12 @@ export default function Home() {
 
       <section className="proof-strip proof-marquee" aria-label="Mo Knives proof points">
         <div className="proof-marquee-track">
-          {proofLoop.map((item, index) => <span key={`${item}-${index}`}>{item}</span>)}
+          {proofLoop.map((item, index) => (
+            <span className="proof-marquee-item" key={`${item.label}-${index}`}>
+              <span className="proof-icon"><ProofIcon name={item.icon} /></span>
+              <span>{item.label}</span>
+            </span>
+          ))}
         </div>
       </section>
 
