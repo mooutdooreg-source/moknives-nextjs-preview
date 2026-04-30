@@ -1,5 +1,52 @@
 /* === Vault Fix Layer (Scoped Overrides) === */
 
+.vault-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background:
+    linear-gradient(180deg, rgba(5,5,5,0.96), rgba(5,5,5,0.84)),
+    radial-gradient(circle at 50% 100%, rgba(240,162,15,0.16), transparent 42%);
+  border-bottom: 1px solid rgba(240,162,15,0.24);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.42), inset 0 -1px 0 rgba(255,255,255,0.035);
+  backdrop-filter: blur(18px) saturate(1.1);
+}
+
+.vault-site-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240,162,15,0.75), transparent);
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.vault-site-header .header-row {
+  position: relative;
+}
+
+.vault-site-header .brand-lockup {
+  border-color: rgba(240,162,15,0.32);
+  box-shadow: 0 0 28px rgba(217,119,6,0.12), inset 0 1px 0 rgba(255,255,255,0.055);
+}
+
+.vault-site-header .nav-link.is-active {
+  color: #f0a20f;
+  text-shadow: 0 0 18px rgba(240,162,15,0.32);
+}
+
+.vault-site-header .nav-link.is-active::after {
+  transform: scaleX(1);
+  box-shadow: 0 0 14px rgba(240,162,15,0.45);
+}
+
+.vault-site-header .request-button {
+  box-shadow: 0 12px 30px rgba(240,162,15,0.24), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
 .vault-page .vault-hero-premium__copy {
   max-width: 100%;
   min-width: 0;
@@ -17,6 +64,20 @@
 
 /* Fix overflow on small screens */
 @media (max-width: 640px) {
+  .vault-site-header .announcement-bar {
+    display: none;
+  }
+
+  .vault-site-header .header-row {
+    padding-top: 8px;
+  }
+
+  .vault-site-header .header-nav {
+    background: linear-gradient(90deg, rgba(255,255,255,0.025), rgba(240,162,15,0.035), rgba(255,255,255,0.025));
+    border-radius: 999px;
+    padding: 0 10px 8px;
+  }
+
   .vault-page .vault-hero-premium__title {
     font-size: clamp(32px, 10vw, 44px);
   }
