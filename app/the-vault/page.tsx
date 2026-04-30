@@ -69,7 +69,7 @@ export default function TheVaultPage() {
       <main className="vault-page vault-page-premium">
         <section className="vault-hero vault-hero-premium">
           <img
-            src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.avif')}
+            src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.webp')}
             alt=""
             className="vault-hero__bg vault-hero-premium__bg"
           />
