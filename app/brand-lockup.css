@@ -71,6 +71,46 @@
   background: transparent !important;
 }
 
+.vault-hero-premium__copy,
+.vault-kicker,
+.vault-hero-premium__copy p,
+.vault-hero-premium__secondary {
+  transition:
+    transform 260ms ease,
+    color 260ms ease,
+    text-shadow 260ms ease,
+    letter-spacing 260ms ease,
+    border-color 260ms ease,
+    background 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.vault-hero-premium__copy:hover .vault-kicker,
+.vault-hero-premium__copy:focus-within .vault-kicker {
+  color: #ffc04a;
+  letter-spacing: 0.52em;
+  text-shadow: 0 0 18px rgba(240, 162, 15, 0.42);
+}
+
+.vault-hero-premium__copy:hover p,
+.vault-hero-premium__copy:focus-within p {
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 0 18px rgba(0, 0, 0, 0.86), 0 0 22px rgba(240, 162, 15, 0.22);
+}
+
+.vault-hero-premium__secondary:hover,
+.vault-hero-premium__secondary:focus-visible {
+  transform: translateY(-2px);
+  color: #111 !important;
+  border-color: rgba(240, 162, 15, 0.92) !important;
+  background: linear-gradient(135deg, #c96f04, #f0a20f 58%, #ffcf6a) !important;
+  box-shadow: 0 18px 42px rgba(217, 119, 6, 0.34), 0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+}
+
+.vault-hero-premium__secondary:active {
+  transform: translateY(0) scale(0.985);
+}
+
 @media (max-width: 900px) {
   .header-row {
     grid-template-columns: auto 1fr auto;
@@ -144,10 +184,59 @@
 
   .vault-hero-premium__inner {
     padding-top: 44px;
+    padding-bottom: 56px;
+  }
+
+  .vault-hero-premium__copy {
+    max-width: min(100%, 92vw);
+  }
+
+  .vault-kicker {
+    font-size: 15px !important;
+    line-height: 1.25;
+    letter-spacing: 0.38em !important;
+    text-shadow: 0 0 14px rgba(0, 0, 0, 0.9), 0 0 14px rgba(240, 162, 15, 0.18);
   }
 
   .vault-hero-premium__title {
-    margin-top: 16px;
+    margin-top: 18px;
+    margin-bottom: 22px;
+  }
+
+  .vault-hero-premium__line {
+    margin: 24px 0 22px;
+  }
+
+  .vault-hero-premium__copy p {
+    max-width: 100%;
+    font-size: clamp(15px, 4.2vw, 18px) !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0.16em !important;
+    color: rgba(255, 255, 255, 0.94) !important;
+    text-shadow: 0 0 16px rgba(0, 0, 0, 0.95);
+  }
+
+  .vault-hero-premium__actions {
+    margin-top: 30px;
+  }
+
+  .vault-hero-premium__secondary {
+    width: min(100%, 390px);
+    min-height: 64px !important;
+    padding: 18px 24px !important;
+    font-size: 14px !important;
+    letter-spacing: 0.14em !important;
+    border-color: rgba(255, 255, 255, 0.36) !important;
+    background: rgba(0, 0, 0, 0.22) !important;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .vault-hero-premium__secondary:active,
+  .vault-hero-premium__secondary:focus-visible {
+    color: #111 !important;
+    background: linear-gradient(135deg, #c96f04, #f0a20f 58%, #ffcf6a) !important;
+    border-color: rgba(240, 162, 15, 0.95) !important;
+    box-shadow: 0 18px 46px rgba(217, 119, 6, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.24);
   }
 
   .vault-hero-premium::after {
