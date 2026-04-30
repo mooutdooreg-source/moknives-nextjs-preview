@@ -1,0 +1,33 @@
+<svg width="300" height="74" viewBox="0 0 300 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="roseGold" x1="0" y1="0" x2="90" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F1D1C5"/>
+      <stop offset="0.42" stop-color="#B96F58"/>
+      <stop offset="1" stop-color="#F4B49D"/>
+    </linearGradient>
+    <linearGradient id="goldStroke" x1="0" y1="0" x2="300" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4B2B10"/>
+      <stop offset="0.5" stop-color="#9B641B"/>
+      <stop offset="1" stop-color="#2E1A0B"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-40%" width="140%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.95  0 1 0 0 0.55  0 0 1 0 0.38  0 0 0 0.55 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="1.5" y="1.5" width="297" height="71" rx="35.5" fill="#050505" fill-opacity="0.72"/>
+  <rect x="1.5" y="1.5" width="297" height="71" rx="35.5" stroke="url(#goldStroke)" stroke-opacity="0.85" stroke-width="3"/>
+
+  <g filter="url(#softGlow)">
+    <text x="27" y="48" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" letter-spacing="-9" fill="url(#roseGold)">MG</text>
+    <path d="M51 19C46 30 44 42 47 56" stroke="url(#roseGold)" stroke-width="2.3" stroke-linecap="round" opacity="0.9"/>
+    <path d="M68 18C61 28 58 41 61 57" stroke="url(#roseGold)" stroke-width="2.3" stroke-linecap="round" opacity="0.9"/>
+  </g>
+
+  <text x="104" y="43" fill="#F5F1E8" font-family="Cinzel, Georgia, serif" font-size="18" font-weight="800" letter-spacing="5.6">MO KNIVES</text>
+</svg>
