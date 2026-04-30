@@ -1,4 +1,5 @@
 import './globals.css';
+import './no-duplicate-request.css';
 
 export const metadata = {
   title: 'Mo Knives',
