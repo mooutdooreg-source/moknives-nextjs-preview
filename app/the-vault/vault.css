@@ -1,0 +1,55 @@
+/* === Vault Fix Layer (Scoped Overrides) === */
+
+.vault-page .vault-hero-premium__copy {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.vault-page .vault-hero-premium__title {
+  font-size: clamp(34px, 11vw, 52px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+.vault-page .vault-hero-premium__copy p {
+  letter-spacing: 0.12em;
+}
+
+/* Fix overflow on small screens */
+@media (max-width: 640px) {
+  .vault-page .vault-hero-premium__title {
+    font-size: clamp(32px, 10vw, 44px);
+  }
+
+  .vault-page .vault-hero-premium__copy {
+    padding-right: 6px;
+  }
+}
+
+/* === Soften video overlay === */
+.vault-page .vault-world-card__media {
+  filter: brightness(0.88) contrast(1.05) saturate(1);
+}
+
+.vault-page .vault-world-card__shade {
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.05),
+    rgba(0,0,0,0.18) 40%,
+    rgba(0,0,0,0.55)
+  );
+}
+
+/* Improve readability without killing image */
+.vault-page .vault-world-card__copy h3 {
+  text-shadow: 0 4px 18px rgba(0,0,0,0.7);
+}
+
+.vault-page .vault-world-card__copy span {
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+/* Slight lift on hover without over-darkening */
+.vault-page .vault-world-card:hover .vault-world-card__media {
+  filter: brightness(0.95) contrast(1.08) saturate(1.05);
+}
