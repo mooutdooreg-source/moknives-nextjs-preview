@@ -40,7 +40,7 @@ const worlds = [
 export default function TheVaultPage() {
   return (
     <>
-      <header className="site-header">
+      <header className="site-header vault-site-header">
         <div className="announcement-bar">
           <div className="announcement-track">
             <div className="announcement-copy">Mo Knives — Hand Forged Since 2015</div>
@@ -57,7 +57,7 @@ export default function TheVaultPage() {
 
           <nav className="header-nav" aria-label="Primary navigation">
             {navItems.map((item) => (
-              <a key={item.label} href={item.href} className="nav-link">{item.label}</a>
+              <a key={item.label} href={item.href} className={`nav-link${item.href === '/the-vault' ? ' is-active' : ''}`}>{item.label}</a>
             ))}
           </nav>
 
