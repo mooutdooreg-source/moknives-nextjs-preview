@@ -2,17 +2,25 @@
    Scope: layout/CSS only. No text or media asset changes. */
 
 .brand-lockup {
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   justify-content: flex-start;
   inline-size: auto;
   max-inline-size: none;
   overflow: visible;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.brand-lockup::before,
+.brand-lockup::after {
+  display: none !important;
+  content: none !important;
 }
 
 .brand-lockup-img {
@@ -23,6 +31,9 @@
   object-fit: contain;
   object-position: left center;
   flex: 0 0 auto;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
 }
 
 /* The uploaded lockup SVG is the single source for the header/footer brand mark. */
@@ -44,26 +55,20 @@
   object-position: center;
 }
 
-/* Brighter Vault hero treatment; no blur, no heavy dark wash. */
+/* Vault hero: show the image cleanly, without dark overlay or blur. */
 .vault-hero-premium__bg {
-  transform: none;
-  opacity: 1;
-  filter: contrast(1.03) saturate(1) brightness(0.9);
-  animation: none;
+  transform: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  animation: none !important;
 }
 
-.vault-hero-premium__shade {
-  background:
-    linear-gradient(90deg, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.36) 36%, rgba(0,0,0,0.10) 68%, rgba(0,0,0,0.28) 100%),
-    linear-gradient(180deg, rgba(0,0,0,0.32) 0%, transparent 36%, rgba(0,0,0,0.54) 100%);
-}
-
-.vault-hero-premium__light {
-  opacity: 0.48;
-}
-
+.vault-hero-premium__shade,
+.vault-hero-premium__light,
 .vault-hero-premium__grain {
-  opacity: 0.08;
+  display: none !important;
+  opacity: 0 !important;
+  background: transparent !important;
 }
 
 @media (max-width: 900px) {
