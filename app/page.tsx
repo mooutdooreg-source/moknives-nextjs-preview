@@ -200,7 +200,7 @@ export default function Home() {
           </div>
 
           <figure className="media-card wide">
-            <img src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.avif')} alt="Mo Knives vault hero" />
+            <img src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.webp')} alt="Mo Knives vault hero" />
           </figure>
         </div>
       </section>
