@@ -188,9 +188,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="vault" className="section vault-section">
-        <div className="container split">
-          <div>
+      <section id="vault" className="section vault-section vault-link-section">
+        <div className="container vault-link-card">
+          <img className="vault-link-bg" src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.webp')} alt="" />
+          <div className="vault-link-content">
             <p className="section-label">The Vault</p>
             <h2 className="section-title">A Living Record of Functional Legacies</h2>
             <p className="section-copy">
@@ -198,10 +199,6 @@ export default function Home() {
             </p>
             <a href="/the-vault" className="button-primary section-cta">Enter The Vault</a>
           </div>
-
-          <figure className="media-card wide">
-            <img src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.webp')} alt="Mo Knives vault hero" />
-          </figure>
         </div>
       </section>
 
