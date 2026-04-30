@@ -1,7 +1,6 @@
 import VaultRecordRail from './VaultRecordRail';
 
 const asset = (path: string) => `/assets/${path}`;
-const rootAsset = (path: string) => `/root-assets/${path}`;
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -70,7 +69,7 @@ export default function TheVaultPage() {
       <main className="vault-page vault-page-premium">
         <section className="vault-hero vault-hero-premium">
           <img
-            src={rootAsset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.webp')}
+            src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.webp')}
             alt=""
             className="vault-hero__bg vault-hero-premium__bg"
           />
