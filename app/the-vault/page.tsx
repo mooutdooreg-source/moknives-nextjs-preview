@@ -1,5 +1,15 @@
 const asset = (path: string) => `/assets/${path}`;
 
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'The Vault', href: '/the-vault' },
+  { label: 'Why Mo', href: '/why-mo' },
+  { label: 'Limited Drop', href: '/#limited-drop' },
+  { label: 'Edge Academy', href: '/#edge-academy' },
+  { label: 'Mo Gear', href: '/#mo-gear' },
+  { label: 'Contact', href: '/#contact' },
+];
+
 const worlds = [
   {
     href: '/expedition',
@@ -29,12 +39,38 @@ const worlds = [
 
 export default function TheVaultPage() {
   return (
-    <main className="vault-page vault-page-premium">
+    <>
+      <header className="site-header">
+        <div className="announcement-bar">
+          <div className="announcement-track">
+            <div className="announcement-copy">Mo Knives — Hand Forged Since 2015</div>
+            <div className="announcement-copy">Field Proven. No Theater.</div>
+            <div className="announcement-copy">Built for Real Use</div>
+          </div>
+        </div>
+
+        <div className="header-row">
+          <a className="brand-lockup" href="/" aria-label="Mo Knives home">
+            <img className="brand-logo" src={asset('media/shared/brand/logo.svg')} alt="Mo Knives logo" />
+            <span className="brand-name">Mo Knives</span>
+          </a>
+
+          <nav className="header-nav" aria-label="Primary navigation">
+            {navItems.map((item) => (
+              <a key={item.label} href={item.href} className="nav-link">{item.label}</a>
+            ))}
+          </nav>
+
+          <a href="/request-entry" className="request-button">Request Entry</a>
+        </div>
+      </header>
+
+      <main className="vault-page vault-page-premium">
       <style>{`
         .vault-page, .vault-page * { box-sizing: border-box; }
         .vault-page { background:#050505; color:#f5f5f5; overflow-x:hidden; font-family: Inter, system-ui, sans-serif; }
         .vault-container { width:min(1220px, calc(100% - 32px)); margin:0 auto; }
-        .vault-hero-premium { position:relative; min-height:calc(100vh - 0px); display:grid; align-items:center; overflow:hidden; isolation:isolate; background:#030303; }
+        .vault-hero-premium { position:relative; min-height:calc(100vh - 92px); display:grid; align-items:center; overflow:hidden; isolation:isolate; background:#030303; }
         .vault-hero-premium__bg { position:absolute !important; inset:0; width:100% !important; height:100% !important; max-width:none !important; object-fit:cover; object-position:center; transform:scale(1.06); opacity:.92; filter:contrast(1.1) saturate(.92) brightness(.52); }
         .vault-hero-premium__light { position:absolute; inset:-12%; z-index:1; background:radial-gradient(circle at 68% 42%, rgba(240,162,15,.28), transparent 23%), radial-gradient(circle at 78% 62%, rgba(217,119,6,.16), transparent 30%); mix-blend-mode:screen; }
         .vault-hero-premium__shade { position:absolute; inset:0; z-index:2; background:linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.76) 36%, rgba(0,0,0,.34) 68%, rgba(0,0,0,.86) 100%), linear-gradient(180deg, rgba(0,0,0,.7), transparent 38%, rgba(0,0,0,.94)); }
@@ -224,5 +260,6 @@ export default function TheVaultPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
