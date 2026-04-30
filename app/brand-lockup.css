@@ -2,22 +2,30 @@
    Scope: layout/CSS only. No text or media asset changes. */
 
 .brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
   inline-size: auto;
-  max-inline-size: min(236px, 42vw);
-  overflow: hidden;
+  max-inline-size: none;
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .brand-lockup-img {
   display: block;
-  width: clamp(138px, 15vw, 202px);
+  width: clamp(210px, 18vw, 300px);
   height: auto;
-  max-height: 44px;
+  max-height: 74px;
   object-fit: contain;
   object-position: left center;
   flex: 0 0 auto;
 }
 
-/* The lockup SVG already contains the mark and MO KNIVES wordmark. */
+/* The uploaded lockup SVG is the single source for the header/footer brand mark. */
 .brand-lockup .brand-logo,
 .brand-lockup .brand-name {
   display: none;
@@ -26,8 +34,8 @@
 /* Lighter home hero overlay while keeping copy readable. */
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0.52) 40%, rgba(0,0,0,0.12) 100%),
-    linear-gradient(0deg, rgba(5,5,5,0.70), transparent 38%);
+    linear-gradient(90deg, rgba(0,0,0,0.64) 0%, rgba(0,0,0,0.42) 40%, rgba(0,0,0,0.08) 100%),
+    linear-gradient(0deg, rgba(5,5,5,0.54), transparent 40%);
 }
 
 .hero-bg,
@@ -36,21 +44,26 @@
   object-position: center;
 }
 
-/* Lighter Vault hero treatment; image remains cover-based, not distorted. */
+/* Brighter Vault hero treatment; no blur, no heavy dark wash. */
 .vault-hero-premium__bg {
-  transform: scale(1.01);
-  opacity: 0.95;
-  filter: contrast(1.06) saturate(0.94) brightness(0.68);
+  transform: none;
+  opacity: 1;
+  filter: contrast(1.03) saturate(1) brightness(0.9);
+  animation: none;
 }
 
 .vault-hero-premium__shade {
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.58) 36%, rgba(0,0,0,0.22) 68%, rgba(0,0,0,0.60) 100%),
-    linear-gradient(180deg, rgba(0,0,0,0.48) 0%, transparent 34%, rgba(0,0,0,0.78) 100%);
+    linear-gradient(90deg, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.36) 36%, rgba(0,0,0,0.10) 68%, rgba(0,0,0,0.28) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.32) 0%, transparent 36%, rgba(0,0,0,0.54) 100%);
 }
 
 .vault-hero-premium__light {
-  opacity: 0.74;
+  opacity: 0.48;
+}
+
+.vault-hero-premium__grain {
+  opacity: 0.08;
 }
 
 @media (max-width: 900px) {
@@ -61,14 +74,9 @@
     min-height: 58px;
   }
 
-  .brand-lockup {
-    padding: 6px 9px;
-    max-inline-size: 174px;
-  }
-
   .brand-lockup-img {
-    width: clamp(124px, 34vw, 166px);
-    max-height: 38px;
+    width: clamp(160px, 34vw, 240px);
+    max-height: 58px;
   }
 
   .request-button {
@@ -112,13 +120,9 @@
     justify-content: space-between;
   }
 
-  .brand-lockup {
-    max-inline-size: min(164px, 54vw);
-  }
-
   .brand-lockup-img {
-    width: min(154px, 51vw);
-    max-height: 34px;
+    width: min(166px, 52vw);
+    max-height: 42px;
   }
 
   .media-hero {
