@@ -53,8 +53,7 @@ export default function TheVaultPage() {
 
         <div className="header-row">
           <a className="brand-lockup" href="/" aria-label="Mo Knives home">
-            <img className="brand-logo" src={asset('media/shared/brand/logo.svg')} alt="Mo Knives logo" />
-            <span className="brand-name">Mo Knives</span>
+            <img className="brand-lockup-img" src={asset('media/shared/brand/logo-lockup.svg')} alt="Mo Knives" />
           </a>
 
           <nav className="header-nav" aria-label="Primary navigation">
