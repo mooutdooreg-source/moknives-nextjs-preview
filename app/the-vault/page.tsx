@@ -29,24 +29,31 @@ const worlds = [
 
 export default function TheVaultPage() {
   return (
-    <main className="vault-page">
-      <section className="vault-hero">
+    <main className="vault-page vault-page-premium">
+      <section className="vault-hero vault-hero-premium">
         <img
           src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.avif')}
           alt=""
-          className="vault-hero__bg"
+          className="vault-hero__bg vault-hero-premium__bg"
         />
-        <div className="vault-hero__shade" />
-        <div className="vault-container vault-hero__inner">
-          <div className="vault-hero__copy">
+        <div className="vault-hero-premium__light" />
+        <div className="vault-hero-premium__shade" />
+        <div className="vault-hero-premium__grain" />
+        <div className="vault-container vault-hero-premium__inner">
+          <div className="vault-hero-premium__copy">
             <span className="vault-kicker">THE VAULT</span>
-            <h1 className="vault-hero__title">
+            <h1 className="vault-hero-premium__title">
               <span>NOT A</span>
               <strong>GALLERY</strong>
               <span>NOT A</span>
               <strong>MARKETPLACE</strong>
             </h1>
+            <div className="vault-hero-premium__line" />
             <p>A LIVING RECORD OF FUNCTIONAL LEGACIES</p>
+            <div className="vault-hero-premium__actions">
+              <a href="/request-entry" className="vault-next-step__btn">REQUEST ENTRY</a>
+              <a href="#four-worlds" className="vault-hero-premium__secondary">EXPLORE RECORDS ↓</a>
+            </div>
           </div>
         </div>
       </section>
