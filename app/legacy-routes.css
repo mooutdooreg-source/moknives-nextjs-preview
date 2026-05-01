@@ -1,0 +1,47 @@
+.legacy-route-shell {
+  min-height: 100vh;
+  background: #050505;
+}
+
+.legacy-route-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(5, 5, 5, 0.82);
+  color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.legacy-route-bar strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.legacy-route-bar a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.78;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.legacy-route-bar a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.legacy-route-frame {
+  display: block;
+  width: 100%;
+  min-height: calc(100vh - 48px);
+  border: 0;
+  background: #050505;
+}

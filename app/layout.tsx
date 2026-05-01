@@ -1,3 +1,4 @@
+import "./legacy-routes.css";
 import './globals.css';
 import './brand-lockup.css';
 import './no-duplicate-request.css';

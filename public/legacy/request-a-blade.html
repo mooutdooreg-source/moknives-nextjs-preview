@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Request a custom blade from Mo Knives. Commission a unique piece, acquire a limited drop, or make an inquiry. Your legacy begins here.">
+  <title>Mo Knives | Request a Blade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/asset-fallbacks.css">
+  <link rel="stylesheet" href="assets/css/media-wrappers.css">
+  <link rel="stylesheet" href="assets/css/pages/request-a-blade.css">
+  <script src="assets/js/layout.js" defer></script>
+  <script src="assets/js/media-resolver.js" defer></script>
+</head>
+
+<body class="font-sans antialiased selection:bg-forge-accent selection:text-white w-full" data-page="request-entry">
+
+    <div id="site-header"></div>
+
+  <main class="overflow-x-hidden">
+    <!-- REQUEST A BLADE -->
+    <section
+      class="py-24 bg-[url('images/request-a-blade-mobile-menu-background-1.avif')] bg-cover bg-[80%_center] md:bg-center md:bg-fixed relative border-b border-forge-800">
+      <div
+        class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-forge-950/95 md:from-forge-950 via-forge-950/80 md:via-forge-950/50 to-forge-950/30 md:to-transparent">
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="mb-16 max-w-2xl fade-up">
+          <span class="text-forge-accent tracking-[0.4em] text-xs uppercase font-bold"><span class="hover-glow">REQUEST
+              A BLADE</span></span>
+          <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl uppercase tracking-widest font-bold">
+            <span class="block text-white"><span class="hover-glow-white">REQUEST</span></span>
+            <span class="block text-yellow-500"><span class="hover-glow">A BLADE</span></span>
+          </h1>
+          <p class="mt-6 max-w-md text-xl text-forge-light/80 font-light">Off-the-shelf blades are bought.
+            Legacy begins with a conversation.</p>
+          <p class="text-forge-light/60 mt-2 max-w-md">A serious blade is not chosen lightly. Whether you are
+            seeking a commissioned piece or the right opportunity to acquire one, this is where intent takes shape.</p>
+        </div>
+
+        <!-- 3 Path Cards -->
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl fade-up">
+          <button type="button" onclick="selectPath(1)" id="path-1"
+            class="fade-up w-full text-left path-card bg-forge-900 p-8 cursor-pointer hover:ring-2 hover:ring-forge-accent transition-all rounded-sm border border-transparent">
+            <h4 class="uppercase text-sm tracking-widest font-bold mb-3">Commission a Blade</h4>
+            <p class="text-sm text-forge-light/70">Start a custom piece made exactly for you.</p>
+          </button>
+          <button type="button" onclick="selectPath(2)" id="path-2"
+            class="fade-up w-full text-left path-card bg-forge-900 p-8 cursor-pointer hover:ring-2 hover:ring-forge-accent transition-all rounded-sm border border-transparent">
+            <h4 class="uppercase text-sm tracking-widest font-bold mb-3">Acquire a Limited Drop</h4>
+            <p class="text-sm text-forge-light/70">Register for early access or claim an available piece.</p>
+          </button>
+          <button type="button" onclick="selectPath(3)" id="path-3"
+            class="fade-up w-full text-left path-card bg-forge-900 p-8 cursor-pointer hover:ring-2 hover:ring-forge-accent transition-all rounded-sm border border-transparent">
+            <h4 class="uppercase text-sm tracking-widest font-bold mb-3">Make an Inquiry</h4>
+            <p class="text-sm text-forge-light/70">Ask questions and explore options.</p>
+          </button>
+        </div>
+
+        <!-- Commission Form -->
+        <div id="commission-form" class="hidden mt-12 max-w-2xl bg-forge-900 p-10 rounded-sm">
+          <h3 class="text-xl uppercase tracking-widest mb-8">Commission a Blade</h3>
+          <form class="space-y-6" onsubmit="submitSuccess(event)">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" placeholder="Full Name" aria-label="Full Name"
+                class="form-input w-full px-5 py-4 text-sm" required>
+              <input type="email" placeholder="Email" aria-label="Email" class="form-input w-full px-5 py-4 text-sm"
+                required>
+            </div>
+            <input type="tel" placeholder="WhatsApp / Phone" aria-label="WhatsApp or Phone"
+              class="form-input w-full px-5 py-4 text-sm" required>
+            <input type="text" placeholder="Country" aria-label="Country" class="form-input w-full px-5 py-4 text-sm"
+              required>
+            <select class="form-input w-full px-5 py-4 text-sm" aria-label="Which world speaks to you most?" required>
+              <option value="">Which world speaks to you most?</option>
+              <option>Expedition</option>
+              <option>Culinary</option>
+              <option>Vanguard</option>
+              <option>Singularis</option>
+              <option>I’m not sure yet</option>
+            </select>
+            <textarea placeholder="What is this blade for?" aria-label="What is this blade for?" rows="3"
+              class="form-input w-full px-5 py-4 text-sm" required></textarea>
+            <button type="submit"
+              class="w-full py-5 bg-forge-accent text-white uppercase tracking-[0.3em] text-xs font-bold">SEND
+              COMMISSION REQUEST</button>
+          </form>
+        </div>
+
+        <!-- Acquire Limited Drop Form -->
+        <div id="limited-form" class="hidden mt-12 max-w-2xl bg-forge-900 p-10 rounded-sm">
+          <h3 class="text-xl uppercase tracking-widest mb-8">Acquire a Limited Drop</h3>
+          <form class="space-y-6" onsubmit="submitSuccess(event)">
+            <input type="text" placeholder="Full Name" aria-label="Full Name" class="form-input w-full px-5 py-4 text-sm" required>
+            <input type="email" placeholder="Email" aria-label="Email" class="form-input w-full px-5 py-4 text-sm" required>
+            <input type="tel" placeholder="WhatsApp / Phone" aria-label="WhatsApp or Phone" class="form-input w-full px-5 py-4 text-sm" required>
+            <input type="text" placeholder="Country" aria-label="Country" class="form-input w-full px-5 py-4 text-sm" required>
+            <input type="text" placeholder="Which piece are you interested in?" aria-label="Piece of Interest"
+              class="form-input w-full px-5 py-4 text-sm" required>
+            <select class="form-input w-full px-5 py-4 text-sm" aria-label="Purchase Timeline" required>
+              <option value="">Register for Early Access or Claim an Available Piece?</option>
+              <option>Register for Early Access</option>
+              <option>Claim an Available Piece</option>
+            </select>
+            <button type="submit"
+              class="w-full py-5 bg-forge-accent text-white uppercase tracking-[0.3em] text-xs font-bold">SUBMIT
+              INTEREST</button>
+          </form>
+        </div>
+
+        <!-- Inquiry Form -->
+        <div id="inquiry-form" class="hidden mt-12 max-w-2xl bg-forge-900 p-10 rounded-sm">
+          <h3 class="text-xl uppercase tracking-widest mb-8">Make an Inquiry</h3>
+          <form class="space-y-6" onsubmit="submitSuccess(event)">
+            <input type="text" placeholder="Full Name" aria-label="Full Name" class="form-input w-full px-5 py-4 text-sm" required>
+            <input type="email" placeholder="Email" aria-label="Email" class="form-input w-full px-5 py-4 text-sm" required>
+            <input type="tel" placeholder="WhatsApp / Phone" aria-label="WhatsApp or Phone" class="form-input w-full px-5 py-4 text-sm" required>
+            <textarea placeholder="What would you like to discuss?" aria-label="What would you like to discuss?" rows="4" class="form-input w-full px-5 py-4 text-sm"
+              required></textarea>
+            <button type="submit"
+              class="w-full py-5 bg-forge-accent text-white uppercase tracking-[0.3em] text-xs font-bold">SEND
+              INQUIRY</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+    <div id="site-footer"></div>
+
+  <script>
+    if (window.lucide && typeof window.lucide.createIcons === 'function') { lucide.createIcons(); }
+
+    // Path selection
+    function selectPath(n) {
+      document.getElementById('commission-form').classList.add('hidden');
+      document.getElementById('limited-form').classList.add('hidden');
+      document.getElementById('inquiry-form').classList.add('hidden');
+
+      if (n === 1) document.getElementById('commission-form').classList.remove('hidden');
+      if (n === 2) document.getElementById('limited-form').classList.remove('hidden');
+      if (n === 3) document.getElementById('inquiry-form').classList.remove('hidden');
+    }
+
+    // Success message
+    function submitSuccess(e) {
+      if (e) e.preventDefault();
+      const msg = document.createElement('div');
+      msg.style.cssText = 'position:fixed;bottom:16px;right:16px;width:min(420px, calc(100vw - 32px));background:#d97706;color:#111;padding:18px 20px;border-radius:4px;font-size:13px;letter-spacing:0.5px;box-shadow:0 10px 15px -3px rgb(0 0 0 / 0.3);z-index:9999;line-height:1.6;';
+      msg.textContent = 'Message received. You’ve taken the first step toward the right blade.';
+      document.body.appendChild(msg);
+      setTimeout(() => msg.remove(), 4500);
+
+      document.querySelectorAll('form').forEach(form => form.reset());
+      document.getElementById('commission-form').classList.add('hidden');
+      document.getElementById('limited-form').classList.add('hidden');
+      document.getElementById('inquiry-form').classList.add('hidden');
+    }
+
+    // Mobile menu
+
+    // Fade Up on Scroll Observer with Dynamic Stagger
+    const fadeObserver = new IntersectionObserver((entries) => {
+      let delay = 0;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('is-visible');
+          }, delay);
+          delay += 100;
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+  </script>
+  <script src="assets/js/photo-card-metadata.js"></script>
+</body>
+
+</html>
