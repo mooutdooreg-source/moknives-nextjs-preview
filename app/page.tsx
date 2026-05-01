@@ -99,6 +99,20 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="why-mo" className="section vault-section vault-link-section">
+        <div className="container vault-link-card">
+          <img className="vault-link-bg" src={asset('media/pages/why-mo/hero/why-mo-hero-main-desktop-v1.avif')} alt="" />
+          <div className="vault-link-content">
+            <p className="section-label">Why Mo</p>
+            <h2 className="section-title">Before the Forge, There Was the Field</h2>
+            <p className="section-copy">
+              Enter the origin page — the field-first logic, craft discipline, proof layer, and reason behind the work.
+            </p>
+            <a href="/why-mo" className="button-primary section-cta">Open Why Mo</a>
+          </div>
+        </div>
+      </section>
+
       <section id="vault" className="section vault-section vault-link-section">
         <div className="container vault-link-card">
           <img className="vault-link-bg" src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.webp')} alt="" />
