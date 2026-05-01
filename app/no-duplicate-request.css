@@ -1,5 +1,7 @@
 /* Keep Request Entry only in the site header */
 .hero-actions .button-primary[href="#request"],
+.mk-premium-actions .button-primary[href="#request"],
+#request.mk-premium-section,
 .request-panel,
 .vault-page .vault-hero-premium__actions .vault-next-step__btn,
 .vault-page .vault-next-step__actions .vault-next-step__btn {
@@ -7,6 +9,7 @@
 }
 
 /* Keep spacing clean after removing the hero primary CTA */
-.hero-actions:has(.button-secondary) {
+.hero-actions:has(.button-secondary),
+.mk-premium-actions:has(.button-secondary) {
   gap: 0;
 }
