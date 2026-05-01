@@ -1,4 +1,4 @@
-
+﻿
 (() => {
   const isNativeInteractive = (el) => /^(A|BUTTON|INPUT|SELECT|TEXTAREA|SUMMARY)$/.test(el.tagName);
   const makeContactHref = (el) => {
@@ -8,7 +8,7 @@
     params.set('autostart', '1');
     params.set('subject', subject);
     if (el.dataset.cardContactMessage) params.set('message', el.dataset.cardContactMessage);
-    return `contact.html?${params.toString()}`;
+    return `/contact?${params.toString()}`;
   };
   const resolveHref = (el) => makeContactHref(el) || el.dataset.cardHref || el.getAttribute('href');
   const go = (href) => {
@@ -45,3 +45,6 @@
     });
   });
 })();
+
+
+

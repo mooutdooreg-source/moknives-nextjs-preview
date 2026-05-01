@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const FALLBACK_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.avif'];
   const MEDIA_EXT_RE = /\.(png|jpe?g|webp|avif)(\?.*)?$/i;
   const cache = new Map();
@@ -126,3 +126,5 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run, { once: true });
   else run();
 })();
+
+

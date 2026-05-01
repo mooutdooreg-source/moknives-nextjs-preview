@@ -1,4 +1,4 @@
-window.MOK_RECORDS = {
+﻿window.MOK_RECORDS = {
   'vault-01': {
     id: 'vault-01',
     tag: 'Vault record 001',
@@ -10,7 +10,7 @@ window.MOK_RECORDS = {
     story: 'This record stands in for older work that should appear as part of a documented lineage rather than a loose gallery. The public layer stays selective, while the detail page preserves space for fuller imagery and notes.',
     hero: 'assets/media/pages/the-vault/archive/vault-archive-preview-desktop-v1.avif',
     gallery: ['assets/media/pages/the-vault/archive/vault-archive-preview-desktop-v1.avif','assets/media/pages/limited-drop/gallery/limited-drop-gallery-detail-01-desktop-v1.avif','assets/media/pages/home/hero/home-hero-final-frame-desktop-v1.avif','assets/media/pages/the-vault/hero/vault-hero-main-desktop-v1.avif'],
-    requestHref: 'request-entry.html',
+    requestHref: '/request-entry',
     requestLabel: 'Request Entry'
   },
   'expedition-01': {
@@ -24,7 +24,7 @@ window.MOK_RECORDS = {
     story: 'Forged for field conditions where reliability matters more than polish, this record keeps the public view compact while preserving multiple angles inside the piece context.',
     hero: 'assets/media/pages/expedition/records/expedition-record-1-main-desktop-v1.avif',
     gallery: ['assets/media/pages/expedition/records/expedition-record-1-main-desktop-v1.avif','assets/media/pages/expedition/records/expedition-record-1-detail-2-desktop-v1.avif','assets/media/pages/expedition/records/expedition-record-1-detail-3-desktop-v1.avif','assets/media/pages/expedition/records/expedition-record-2-detail-1-desktop-v1.avif'],
-    requestHref: 'request-entry.html',
+    requestHref: '/request-entry',
     requestLabel: 'Request Entry'
   },
   'expedition-02': {
@@ -38,7 +38,7 @@ window.MOK_RECORDS = {
     story: 'A second field-facing record helps prove the pattern without turning the world page into a crowded image feed. The preview stays selective, and the detail page holds the rest.',
     hero: 'assets/media/pages/expedition/records/expedition-record-2-main-desktop-v1.avif',
     gallery: ['assets/media/pages/expedition/records/expedition-record-2-main-desktop-v1.avif','assets/media/pages/expedition/records/expedition-record-2-detail-3-desktop-v1.avif','assets/media/pages/expedition/records/expedition-record-3-detail-2-desktop-v1.avif','assets/media/pages/expedition/records/expedition-record-2-detail-1-desktop-v1.avif'],
-    requestHref: 'request-entry.html',
+    requestHref: '/request-entry',
     requestLabel: 'Request Entry'
   },
   'culinary-01': {
@@ -52,7 +52,7 @@ window.MOK_RECORDS = {
     story: 'The culinary world benefits from sharper documentation: a clean public preview, then a dedicated piece page where texture, edge, and handling can be shown with restraint.',
     hero: 'assets/media/pages/culinary/records/culinary-record-1-main-desktop-v1.avif',
     gallery: ['assets/media/pages/culinary/records/culinary-record-1-main-desktop-v1.avif','assets/media/pages/culinary/records/culinary-record-2-main-desktop-v1.avif','assets/media/pages/culinary/records/culinary-record-3-main-desktop-v1.avif','assets/media/pages/culinary/records/culinary-record-4-main-desktop-v1.avif'],
-    requestHref: 'request-entry.html',
+    requestHref: '/request-entry',
     requestLabel: 'Request Entry'
   },
   'culinary-02': {
@@ -66,7 +66,7 @@ window.MOK_RECORDS = {
     story: 'This record keeps the world page disciplined: one specs card, one stacked visual, and the deeper gallery held back until the user enters the piece itself.',
     hero: 'assets/media/pages/culinary/records/culinary-record-4-main-desktop-v1.avif',
     gallery: ['assets/media/pages/culinary/records/culinary-record-4-main-desktop-v1.avif','assets/media/pages/culinary/records/culinary-record-5-main-desktop-v1.avif','assets/media/pages/culinary/records/culinary-record-6-main-desktop-v1.avif','assets/media/pages/culinary/records/culinary-detail-crop-desktop-v1.avif'],
-    requestHref: 'request-entry.html',
+    requestHref: '/request-entry',
     requestLabel: 'Request Entry'
   },
   'singularis-01': {
@@ -80,7 +80,7 @@ window.MOK_RECORDS = {
     story: 'Singularis pieces carry a different weight, so the preview stays sparse and self-contained. The record page carries the richer visual context after the click.',
     hero: 'assets/media/pages/singularis/records/singularis-record-1-main-desktop-v1.avif',
     gallery: ['assets/media/pages/singularis/records/singularis-record-1-main-desktop-v1.avif','assets/media/pages/singularis/records/singularis-record-2-main-desktop-v1.avif','assets/media/pages/singularis/records/singularis-record-3-main-desktop-v1.avif','assets/media/pages/singularis/records/singularis-record-4-main-desktop-v1.avif'],
-    requestHref: 'request-entry.html',
+    requestHref: '/request-entry',
     requestLabel: 'Request Entry'
   },
   'singularis-02': {
@@ -94,7 +94,7 @@ window.MOK_RECORDS = {
     story: 'This record extends the same logic: a selective public presentation, then a fuller sequence of stills once the viewer has entered the piece itself.',
     hero: 'assets/media/pages/singularis/records/singularis-record-5-main-desktop-v1.avif',
     gallery: ['assets/media/pages/singularis/records/singularis-record-5-main-desktop-v1.avif','assets/media/pages/singularis/records/singularis-record-6-main-desktop-v1.avif','assets/media/pages/singularis/records/singularis-detail-crop-desktop-v1.avif','assets/media/pages/singularis/hero/singularis-hero-feature-1-desktop-v1.avif'],
-    requestHref: 'request-entry.html',
+    requestHref: '/request-entry',
     requestLabel: 'Request Entry'
   },
   'vanguard-01': {
@@ -108,7 +108,7 @@ window.MOK_RECORDS = {
     story: 'Vanguard records are handled differently. Public previews remain selective, and any next step moves through review and qualification rather than a general request path.',
     hero: 'assets/media/pages/vanguard/records/vanguard-record-1-main-desktop-v1.avif',
     gallery: ['assets/media/pages/vanguard/records/vanguard-record-1-main-desktop-v1.avif','assets/media/pages/vanguard/records/vanguard-record-2-main-desktop-v1.avif','assets/media/pages/vanguard/records/vanguard-record-3-main-desktop-v1.avif','assets/media/pages/vanguard/records/vanguard-detail-crop-desktop-v1.avif'],
-    requestHref: 'vanguard-request.html',
+    requestHref: '/vanguard-request',
     requestLabel: 'Are You Qualified?'
   },
   'vanguard-02': {
@@ -122,7 +122,9 @@ window.MOK_RECORDS = {
     story: 'This record uses the same piece logic as the rest of the site, but the call to action remains screened and world-specific. Public imagery stays measured by design.',
     hero: 'assets/media/pages/vanguard/records/vanguard-record-4-main-desktop-v1.avif',
     gallery: ['assets/media/pages/vanguard/records/vanguard-record-4-main-desktop-v1.avif','assets/media/pages/vanguard/records/vanguard-record-5-main-desktop-v1.avif','assets/media/pages/vanguard/records/vanguard-record-6-main-desktop-v1.avif','assets/media/pages/vanguard/records/vanguard-feature-1-desktop-v1.avif'],
-    requestHref: 'vanguard-request.html',
+    requestHref: '/vanguard-request',
     requestLabel: 'Are You Qualified?'
   }
 };
+
+

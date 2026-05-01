@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   if (window.__moLayoutLoaded) return;
   window.__moLayoutLoaded = true;
 
@@ -8,21 +8,21 @@
   };
 
   var PAGE_BY_FILE = {
-    'index.html': 'home',
-    'the-vault.html': 'vault',
-    'why-mo.html': 'why-mo',
-    'limited-drop.html': 'limited-drop',
-    'edge-academy.html': 'edge-academy',
-    'mo-gear.html': 'mo-gear',
-    'contact.html': 'contact',
-    'request-entry.html': 'request-entry',
-    'request-a-blade.html': 'request-entry',
-    'vanguard-request.html': 'vanguard-request',
-    'record-detail.html': 'vault',
-    'culinary.html': 'vault',
-    'expedition.html': 'vault',
-    'singularis.html': 'vault',
-    'vanguard.html': 'vault'
+    '/': 'home',
+    '/the-vault': 'vault',
+    '/why-mo': 'why-mo',
+    '/limited-drop': 'limited-drop',
+    '/edge-academy': 'edge-academy',
+    '/mo-gear': 'mo-gear',
+    '/contact': 'contact',
+    '/request-entry': 'request-entry',
+    '/request-a-blade': 'request-entry',
+    '/vanguard-request': 'vanguard-request',
+    '/record-detail': 'vault',
+    '/culinary': 'vault',
+    '/expedition': 'vault',
+    '/singularis': 'vault',
+    '/vanguard': 'vault'
   };
 
   function loadPartial(path) {
@@ -207,3 +207,5 @@
 
   initLayout();
 })();
+
+
