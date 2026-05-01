@@ -3,19 +3,24 @@ import type { CSSProperties, ReactNode } from 'react';
 const asset = (path: string) => `/assets/${path}`;
 
 const pageShellStyle: CSSProperties = {
+  maxWidth: '100%',
+  overflowX: 'hidden',
   background:
     'radial-gradient(circle at 50% 2%, rgba(240,162,15,0.12), transparent 22%), radial-gradient(circle at 8% 24%, rgba(217,119,6,0.08), transparent 24%), linear-gradient(180deg, #050505 0%, #090704 42%, #050505 100%)',
 };
 
 const heroSectionStyle: CSSProperties = {
-  padding: 'clamp(58px, 9vw, 112px) 0 clamp(46px, 7vw, 84px)',
+  maxWidth: '100%',
+  overflowX: 'hidden',
+  padding: 'clamp(48px, 8vw, 112px) 0 clamp(40px, 7vw, 84px)',
 };
 
 const luxuryPanelStyle: CSSProperties = {
   position: 'relative',
-  width: 'min(1120px, calc(100% - 32px))',
+  width: 'min(1120px, calc(100vw - 32px))',
+  maxWidth: '100%',
   margin: '0 auto',
-  padding: 'clamp(30px, 6vw, 70px) clamp(18px, 5vw, 78px)',
+  padding: 'clamp(26px, 5vw, 70px) clamp(16px, 5vw, 78px)',
   border: '1px solid rgba(240,162,15,0.2)',
   borderRadius: 'clamp(22px, 4vw, 42px)',
   background:
@@ -27,19 +32,24 @@ const luxuryPanelStyle: CSSProperties = {
 };
 
 const sectionStyle: CSSProperties = {
-  padding: 'clamp(46px, 7vw, 92px) 0',
+  maxWidth: '100%',
+  overflowX: 'hidden',
+  padding: 'clamp(42px, 7vw, 92px) 0',
 };
 
 const sectionWrapStyle: CSSProperties = {
-  width: 'min(980px, calc(100% - 32px))',
+  width: 'min(900px, calc(100vw - 32px))',
+  maxWidth: '100%',
   margin: '0 auto',
   display: 'grid',
-  gap: 'clamp(20px, 4vw, 34px)',
+  gap: 'clamp(18px, 4vw, 32px)',
 };
 
 const textPanelStyle: CSSProperties = {
   position: 'relative',
-  padding: 'clamp(24px, 5vw, 50px) clamp(20px, 5vw, 58px)',
+  width: '100%',
+  maxWidth: '100%',
+  padding: 'clamp(22px, 5vw, 46px) clamp(18px, 5vw, 54px)',
   border: '1px solid rgba(240,162,15,0.18)',
   borderRadius: 'clamp(22px, 5vw, 36px)',
   background:
@@ -55,17 +65,17 @@ const kickerStyle: CSSProperties = {
   color: '#f0a20f',
   fontSize: 'clamp(9px, 1.8vw, 12px)',
   fontWeight: 900,
-  letterSpacing: '0.26em',
+  letterSpacing: '0.22em',
   textTransform: 'uppercase',
 };
 
 const heroTitleStyle: CSSProperties = {
   margin: 'clamp(18px, 4vw, 28px) auto clamp(14px, 3vw, 20px)',
-  maxWidth: '900px',
+  maxWidth: '100%',
   fontFamily: 'Cinzel, serif',
-  fontSize: 'clamp(46px, 10vw, 126px)',
-  lineHeight: 0.92,
-  letterSpacing: '-0.052em',
+  fontSize: 'clamp(42px, 9vw, 126px)',
+  lineHeight: 0.94,
+  letterSpacing: '-0.045em',
   textTransform: 'uppercase',
   color: 'rgba(255,250,242,0.98)',
   textShadow: '0 1px 0 rgba(255,255,255,0.18), 0 24px 46px rgba(0,0,0,0.55)',
@@ -73,18 +83,18 @@ const heroTitleStyle: CSSProperties = {
 
 const sectionTitleStyle: CSSProperties = {
   margin: 'clamp(14px, 3vw, 24px) 0 clamp(10px, 2vw, 14px)',
-  maxWidth: '760px',
+  maxWidth: '100%',
   fontFamily: 'Cinzel, serif',
-  fontSize: 'clamp(27px, 6vw, 58px)',
-  lineHeight: 1.05,
-  letterSpacing: '-0.025em',
+  fontSize: 'clamp(25px, 5.5vw, 54px)',
+  lineHeight: 1.07,
+  letterSpacing: '-0.02em',
   textTransform: 'uppercase',
   color: 'rgba(255,250,242,0.98)',
   textShadow: '0 1px 0 rgba(255,255,255,0.12), 0 16px 34px rgba(0,0,0,0.48)',
 };
 
 const copyStyle: CSSProperties = {
-  maxWidth: '680px',
+  maxWidth: '620px',
   margin: 'clamp(14px, 3vw, 22px) 0 0',
   color: 'rgba(245,245,245,0.83)',
   fontSize: 'clamp(14.5px, 2.8vw, 18px)',
@@ -95,7 +105,7 @@ const copyStyle: CSSProperties = {
 
 const heroCopyStyle: CSSProperties = {
   ...copyStyle,
-  maxWidth: '760px',
+  maxWidth: '720px',
   margin: 'clamp(16px, 3vw, 24px) auto 0',
   textAlign: 'center',
   fontSize: 'clamp(15px, 2.5vw, 19px)',
@@ -105,25 +115,41 @@ const heroCopyStyle: CSSProperties = {
 const mediaStyle: CSSProperties = {
   position: 'relative',
   width: '100%',
-  minHeight: 'clamp(340px, 72vw, 620px)',
+  maxWidth: '100%',
+  aspectRatio: '4 / 5',
+  minHeight: 0,
   overflow: 'hidden',
-  borderRadius: 'clamp(24px, 5vw, 38px)',
+  borderRadius: 'clamp(22px, 5vw, 36px)',
   border: '1px solid rgba(240,162,15,0.24)',
   background: 'rgba(255,255,255,0.035)',
   boxShadow: '0 30px 86px rgba(0,0,0,0.42), 0 0 0 1px rgba(255,255,255,0.04) inset',
 };
 
-const mediaContentStyle: CSSProperties = {
+const imageContentStyle: CSSProperties = {
   width: '100%',
   height: '100%',
-  minHeight: 'inherit',
+  minHeight: 0,
   objectFit: 'cover',
+};
+
+const videoMediaStyle: CSSProperties = {
+  ...mediaStyle,
+  aspectRatio: '16 / 9',
+  background: '#050505',
+};
+
+const videoContentStyle: CSSProperties = {
+  width: '100%',
+  height: '100%',
+  minHeight: 0,
+  objectFit: 'contain',
+  background: '#050505',
 };
 
 const absBadgeImageStyle: CSSProperties = {
   width: '100%',
   height: '100%',
-  minHeight: 'inherit',
+  minHeight: 0,
   objectFit: 'contain',
   padding: 'clamp(42px, 13vw, 98px)',
   background:
@@ -136,6 +162,7 @@ const dividerWrapStyle: CSSProperties = {
   justifyContent: 'center',
   gap: 'clamp(10px, 3vw, 18px)',
   width: 'min(300px, 72%)',
+  maxWidth: '100%',
   margin: 'clamp(14px, 3vw, 22px) 0',
 };
 
@@ -194,7 +221,7 @@ export default function WhyMoPage() {
           <figure
             className="why-mo-hero-badge"
             style={{
-              width: 'min(170px, 40vw)',
+              width: 'min(150px, 38vw)',
               margin: '0 auto clamp(20px, 4vw, 28px)',
               filter: 'drop-shadow(0 18px 34px rgba(0, 0, 0, 0.42)) drop-shadow(0 0 28px rgba(240, 162, 15, 0.2))',
               opacity: 0.98,
@@ -224,7 +251,7 @@ export default function WhyMoPage() {
             Working under the name Mo since 2015, I built my foundation in the field first — where a knife had to be more than sharp; it had to be dependable.
           </LuxuryText>
           <figure style={mediaStyle}>
-            <img src={asset('media/pages/why-mo/hero/why-mo-hero-main-desktop-v1.avif')} alt="Why Mo atmosphere and workshop origin" style={mediaContentStyle} />
+            <img src={asset('media/pages/why-mo/hero/why-mo-hero-main-desktop-v1.avif')} alt="Why Mo atmosphere and workshop origin" style={imageContentStyle} />
           </figure>
           <LuxuryText label="FIELD STANDARD" title="WHERE THE WORLDS MEET">
             That same standard later found its way into the culinary world through co-founding ECC as Master Bladesmith and designer, creating for renowned chefs and some of the most exacting fine-dining, steakhouse, and Japanese culinary environments. Mo Knives exists where those worlds meet: raw durability, disciplined craftsmanship, and purpose without pretense.
@@ -238,7 +265,7 @@ export default function WhyMoPage() {
             Thermal refinement is tuned for resilience, retention, and the task the blade is expected to survive. Numbers without context are theater. The meaningful question is whether hardness, toughness, and stability serve the knife’s intended work.
           </LuxuryText>
           <figure style={mediaStyle}>
-            <img src={asset('media/pages/why-mo/process/why-mo-process-heat-treatment-desktop-v1.avif')} alt="Precision heat treatment and blade logic detail" style={mediaContentStyle} />
+            <img src={asset('media/pages/why-mo/process/why-mo-process-heat-treatment-desktop-v1.avif')} alt="Precision heat treatment and blade logic detail" style={imageContentStyle} />
           </figure>
           <LuxuryText label="GEOMETRY DECIDES" title="EVERY LINE HAS TO JUSTIFY ITSELF">
             From edge thickness to grind choice, every line has to justify itself in contact. A knife can be beautifully finished and still feel wrong in the cut. Geometry is what decides resistance, bite, food release, durability, and control.
@@ -251,8 +278,8 @@ export default function WhyMoPage() {
           <LuxuryText label="PERFORMANCE PROOF" title={<>NO THEATER. ONLY<br />PERFORMANCE.</>}>
             No cosmetic excess. No empty claims. Only honest construction that earns trust when the blade meets real resistance.
           </LuxuryText>
-          <figure style={mediaStyle}>
-            <video autoPlay muted loop playsInline preload="metadata" poster={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-poster-desktop-v1.jpg')} aria-label="Performance proof cutting test video" style={mediaContentStyle}>
+          <figure style={videoMediaStyle}>
+            <video autoPlay muted loop playsInline preload="metadata" poster={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-poster-desktop-v1.jpg')} aria-label="Performance proof cutting test video" style={videoContentStyle}>
               <source src={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-desktop-v1.mp4')} type="video/mp4" />
             </video>
           </figure>
@@ -268,7 +295,7 @@ export default function WhyMoPage() {
             Forging, grinding, heat treatment, sharpening, and testing are not decorative chapters. They are the controlled sequence that turns material into a dependable tool.
           </LuxuryText>
           <figure style={mediaStyle}>
-            <img src={asset('media/pages/why-mo/process/why-mo-process-grinding-desktop-v1.png')} alt="Grinding and process proof inside the Mo workshop" style={mediaContentStyle} />
+            <img src={asset('media/pages/why-mo/process/why-mo-process-grinding-desktop-v1.png')} alt="Grinding and process proof inside the Mo workshop" style={imageContentStyle} />
           </figure>
           <LuxuryText label="CONTROLLED SEQUENCE" title="EACH STAGE SUPPORTS THE NEXT">
             Each stage has to support the next: the profile must serve the hand, the grind must serve the cut, the heat treatment must serve the steel, and the final edge must serve real use.
@@ -290,7 +317,7 @@ export default function WhyMoPage() {
         </div>
       </section>
 
-      <section className="request-panel">
+      <section className="request-panel" style={{ overflowX: 'hidden' }}>
         <div style={{ ...luxuryPanelStyle, maxWidth: '880px' }}>
           <p style={kickerStyle}>NEXT STEP</p>
           <h2 style={{ ...sectionTitleStyle, textAlign: 'center', marginInline: 'auto' }}>ENTER THE VAULT</h2>
