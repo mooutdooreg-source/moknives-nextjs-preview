@@ -1,81 +1,189 @@
+import type { CSSProperties, ReactNode } from 'react';
+
 const asset = (path: string) => `/assets/${path}`;
 
-const narrativeSectionStyle = {
-  padding: 'clamp(48px, 8vw, 96px) 0',
-};
-
-const narrativeWrapStyle = {
-  display: 'grid',
-  gap: 'clamp(18px, 4vw, 30px)',
-  maxWidth: '880px',
-};
-
-const narrativeTextStyle = {
-  position: 'relative' as const,
-  padding: 'clamp(22px, 6vw, 42px)',
-  border: '1px solid rgba(217,119,6,0.18)',
-  borderRadius: 'clamp(20px, 5vw, 32px)',
+const pageShellStyle: CSSProperties = {
   background:
-    'linear-gradient(145deg, rgba(255,255,255,0.066), rgba(255,255,255,0.018)), radial-gradient(circle at 0% 0%, rgba(240,162,15,0.11), transparent 42%)',
-  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.07), 0 24px 70px rgba(0,0,0,0.32)',
-  overflow: 'hidden',
+    'radial-gradient(circle at 50% 2%, rgba(240,162,15,0.12), transparent 22%), radial-gradient(circle at 8% 24%, rgba(217,119,6,0.08), transparent 24%), linear-gradient(180deg, #050505 0%, #090704 42%, #050505 100%)',
 };
 
-const narrativeCopyStyle = {
-  maxWidth: '720px',
-  color: 'rgba(245,245,245,0.84)',
-  fontSize: 'clamp(16px, 4.15vw, 19px)',
-  lineHeight: 1.92,
+const heroSectionStyle: CSSProperties = {
+  padding: 'clamp(74px, 10vw, 132px) 0 clamp(54px, 8vw, 96px)',
+};
+
+const luxuryPanelStyle: CSSProperties = {
+  position: 'relative',
+  width: 'min(1120px, calc(100% - 32px))',
+  margin: '0 auto',
+  padding: 'clamp(34px, 7vw, 78px) clamp(20px, 6vw, 86px)',
+  border: '1px solid rgba(240,162,15,0.2)',
+  borderRadius: 'clamp(24px, 4vw, 42px)',
+  background:
+    'radial-gradient(circle at 50% 0%, rgba(240,162,15,0.13), transparent 32%), radial-gradient(circle at 50% 100%, rgba(217,119,6,0.09), transparent 30%), linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.012))',
+  boxShadow:
+    'inset 0 1px 0 rgba(255,255,255,0.07), inset 0 0 80px rgba(0,0,0,0.34), 0 30px 90px rgba(0,0,0,0.38)',
+  overflow: 'hidden',
+  textAlign: 'center',
+};
+
+const sectionStyle: CSSProperties = {
+  padding: 'clamp(54px, 8vw, 104px) 0',
+};
+
+const sectionWrapStyle: CSSProperties = {
+  width: 'min(980px, calc(100% - 32px))',
+  margin: '0 auto',
+  display: 'grid',
+  gap: 'clamp(22px, 4vw, 36px)',
+};
+
+const textPanelStyle: CSSProperties = {
+  position: 'relative',
+  padding: 'clamp(30px, 7vw, 58px) clamp(20px, 6vw, 64px)',
+  border: '1px solid rgba(240,162,15,0.2)',
+  borderRadius: 'clamp(24px, 5vw, 38px)',
+  background:
+    'radial-gradient(circle at 50% 0%, rgba(240,162,15,0.12), transparent 30%), linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.014))',
+  boxShadow:
+    'inset 0 1px 0 rgba(255,255,255,0.07), inset 0 -36px 80px rgba(0,0,0,0.18), 0 28px 76px rgba(0,0,0,0.34)',
+  overflow: 'hidden',
+  textAlign: 'center',
+};
+
+const kickerStyle: CSSProperties = {
   margin: 0,
-  fontWeight: 400,
-  letterSpacing: '0.01em',
+  color: '#f0a20f',
+  fontSize: 'clamp(10px, 2.4vw, 12px)',
+  fontWeight: 900,
+  letterSpacing: '0.34em',
+  textTransform: 'uppercase',
 };
 
-const narrativeMediaStyle = {
-  position: 'relative' as const,
+const heroTitleStyle: CSSProperties = {
+  margin: 'clamp(18px, 4vw, 28px) auto clamp(14px, 3vw, 20px)',
+  maxWidth: '900px',
+  fontFamily: 'Cinzel, serif',
+  fontSize: 'clamp(58px, 12vw, 132px)',
+  lineHeight: 0.9,
+  letterSpacing: '-0.055em',
+  textTransform: 'uppercase',
+  color: 'rgba(255,250,242,0.98)',
+  textShadow: '0 1px 0 rgba(255,255,255,0.18), 0 24px 46px rgba(0,0,0,0.55)',
+};
+
+const sectionTitleStyle: CSSProperties = {
+  margin: 'clamp(16px, 4vw, 28px) auto clamp(12px, 3vw, 18px)',
+  maxWidth: '760px',
+  fontFamily: 'Cinzel, serif',
+  fontSize: 'clamp(34px, 8vw, 68px)',
+  lineHeight: 1.02,
+  letterSpacing: '-0.035em',
+  textTransform: 'uppercase',
+  color: 'rgba(255,250,242,0.98)',
+  textShadow: '0 1px 0 rgba(255,255,255,0.14), 0 18px 38px rgba(0,0,0,0.52)',
+};
+
+const copyStyle: CSSProperties = {
+  maxWidth: '760px',
+  margin: 'clamp(18px, 4vw, 28px) auto 0',
+  color: 'rgba(245,245,245,0.86)',
+  fontSize: 'clamp(16px, 4.2vw, 20px)',
+  lineHeight: 1.9,
+  letterSpacing: '0.012em',
+  fontWeight: 400,
+};
+
+const mediaStyle: CSSProperties = {
+  position: 'relative',
   width: '100%',
-  minHeight: 'clamp(330px, 72vw, 620px)',
-  borderRadius: 'clamp(22px, 5vw, 34px)',
+  minHeight: 'clamp(340px, 72vw, 620px)',
   overflow: 'hidden',
+  borderRadius: 'clamp(24px, 5vw, 38px)',
   border: '1px solid rgba(240,162,15,0.24)',
   background: 'rgba(255,255,255,0.035)',
   boxShadow: '0 30px 86px rgba(0,0,0,0.42), 0 0 0 1px rgba(255,255,255,0.04) inset',
 };
 
-const narrativeMediaImageStyle = {
+const mediaContentStyle: CSSProperties = {
   width: '100%',
   height: '100%',
   minHeight: 'inherit',
-  objectFit: 'cover' as const,
+  objectFit: 'cover',
 };
 
-const narrativeAbsImageStyle = {
+const absBadgeImageStyle: CSSProperties = {
   width: '100%',
   height: '100%',
   minHeight: 'inherit',
-  objectFit: 'contain' as const,
-  padding: 'clamp(34px, 12vw, 86px)',
-  background: 'radial-gradient(circle at 50% 42%, rgba(240,162,15,0.16), rgba(255,255,255,0.018) 58%, rgba(0,0,0,0.2))',
+  objectFit: 'contain',
+  padding: 'clamp(42px, 13vw, 98px)',
+  background:
+    'radial-gradient(circle at 50% 42%, rgba(240,162,15,0.16), rgba(255,255,255,0.018) 58%, rgba(0,0,0,0.2))',
 };
 
-const firstParagraphAccentStyle = {
-  marginTop: 'clamp(18px, 4vw, 26px)',
-  paddingTop: 'clamp(18px, 4vw, 24px)',
-  borderTop: '1px solid rgba(240,162,15,0.18)',
+const dividerWrapStyle: CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: 'clamp(10px, 3vw, 18px)',
+  width: 'min(360px, 78%)',
+  margin: 'clamp(16px, 4vw, 24px) auto',
 };
+
+const dividerLineStyle: CSSProperties = {
+  height: '1px',
+  flex: 1,
+  background: 'linear-gradient(90deg, transparent, rgba(240,162,15,0.72))',
+  boxShadow: '0 0 18px rgba(240,162,15,0.18)',
+};
+
+const dividerLineRightStyle: CSSProperties = {
+  ...dividerLineStyle,
+  background: 'linear-gradient(90deg, rgba(240,162,15,0.72), transparent)',
+};
+
+const dividerMarkStyle: CSSProperties = {
+  width: '7px',
+  height: '7px',
+  transform: 'rotate(45deg)',
+  border: '1px solid rgba(240,162,15,0.78)',
+  background: 'rgba(240,162,15,0.28)',
+  boxShadow: '0 0 16px rgba(240,162,15,0.36)',
+};
+
+function OrnateDivider() {
+  return (
+    <div style={dividerWrapStyle} aria-hidden="true">
+      <span style={dividerLineStyle} />
+      <span style={dividerMarkStyle} />
+      <span style={dividerLineRightStyle} />
+    </div>
+  );
+}
+
+function LuxuryText({ label, title, children }: { label: string; title: ReactNode; children: ReactNode }) {
+  return (
+    <div style={textPanelStyle}>
+      <p style={kickerStyle}>{label}</p>
+      <h2 style={sectionTitleStyle}>{title}</h2>
+      <OrnateDivider />
+      <p style={copyStyle}>{children}</p>
+    </div>
+  );
+}
 
 export default function WhyMoPage() {
   return (
-    <main className="page-shell">
-      <section className="section page-hero-simple">
-        <div className="container section-heading-center">
+    <main className="page-shell" style={pageShellStyle}>
+      <section className="section page-hero-simple" style={heroSectionStyle}>
+        <div style={luxuryPanelStyle}>
           <figure
             className="why-mo-hero-badge"
             style={{
-              width: 'min(170px, 42vw)',
-              margin: '0 auto 22px',
-              filter: 'drop-shadow(0 18px 34px rgba(0, 0, 0, 0.42)) drop-shadow(0 0 24px rgba(240, 162, 15, 0.14))',
-              opacity: 0.96,
+              width: 'min(170px, 40vw)',
+              margin: '0 auto clamp(20px, 4vw, 28px)',
+              filter: 'drop-shadow(0 18px 34px rgba(0, 0, 0, 0.42)) drop-shadow(0 0 28px rgba(240, 162, 15, 0.2))',
+              opacity: 0.98,
             }}
           >
             <img
@@ -88,101 +196,93 @@ export default function WhyMoPage() {
               }}
             />
           </figure>
-          <p className="section-label">WHY MO / ORIGIN</p>
-          <h1 className="section-title page-title">WHY MO</h1>
-          <p className="section-copy centered-copy">My work did not begin at the anvil. It began in the field — as a hunter, angler, and open-fire cook — shaped by the demanding reality of use.</p>
-          <p className="section-copy centered-copy">Not a gallery. Not a marketplace. A living record of functional legacies — built to explain why the work deserves trust before it asks for attention.</p>
+          <p style={kickerStyle}>WHY MO / ORIGIN</p>
+          <h1 style={heroTitleStyle}>WHY MO</h1>
+          <OrnateDivider />
+          <p style={copyStyle}>My work did not begin at the anvil. It began in the field — as a hunter, angler, and open-fire cook — shaped by the demanding reality of use.</p>
+          <p style={copyStyle}>Not a gallery. Not a marketplace. A living record of functional legacies — built to explain why the work deserves trust before it asks for attention.</p>
         </div>
       </section>
 
-      <section className="section" style={narrativeSectionStyle}>
-        <div className="container" style={narrativeWrapStyle}>
-          <div style={narrativeTextStyle}>
-            <p className="section-label">FIELD FOUNDATION</p>
-            <h2 className="section-title">BEFORE THE FORGE,<br />THERE WAS THE FIELD</h2>
-            <p style={{ ...narrativeCopyStyle, ...firstParagraphAccentStyle }}>Working under the name Mo since 2015, I built my foundation in the field first — where a knife had to be more than sharp; it had to be dependable.</p>
-          </div>
-          <figure style={narrativeMediaStyle}>
-            <img src={asset('media/pages/why-mo/hero/why-mo-hero-main-desktop-v1.avif')} alt="Why Mo atmosphere and workshop origin" style={narrativeMediaImageStyle} />
+      <section className="section" style={sectionStyle}>
+        <div className="container" style={sectionWrapStyle}>
+          <LuxuryText label="FIELD FOUNDATION" title={<>BEFORE THE FORGE,<br />THERE WAS THE FIELD</>}>
+            Working under the name Mo since 2015, I built my foundation in the field first — where a knife had to be more than sharp; it had to be dependable.
+          </LuxuryText>
+          <figure style={mediaStyle}>
+            <img src={asset('media/pages/why-mo/hero/why-mo-hero-main-desktop-v1.avif')} alt="Why Mo atmosphere and workshop origin" style={mediaContentStyle} />
           </figure>
-          <div style={narrativeTextStyle}>
-            <p style={narrativeCopyStyle}>That same standard later found its way into the culinary world through co-founding ECC as Master Bladesmith and designer, creating for renowned chefs and some of the most exacting fine-dining, steakhouse, and Japanese culinary environments. Mo Knives exists where those worlds meet: raw durability, disciplined craftsmanship, and purpose without pretense.</p>
-          </div>
+          <LuxuryText label="FIELD STANDARD" title="WHERE THE WORLDS MEET">
+            That same standard later found its way into the culinary world through co-founding ECC as Master Bladesmith and designer, creating for renowned chefs and some of the most exacting fine-dining, steakhouse, and Japanese culinary environments. Mo Knives exists where those worlds meet: raw durability, disciplined craftsmanship, and purpose without pretense.
+          </LuxuryText>
         </div>
       </section>
 
-      <section className="section alt" style={narrativeSectionStyle}>
-        <div className="container" style={narrativeWrapStyle}>
-          <div style={narrativeTextStyle}>
-            <p className="section-label">CRAFT LOGIC</p>
-            <h2 className="section-title">THE LOGIC OF THE BLADE</h2>
-            <p style={{ ...narrativeCopyStyle, ...firstParagraphAccentStyle }}>Thermal refinement is tuned for resilience, retention, and the task the blade is expected to survive. Numbers without context are theater. The meaningful question is whether hardness, toughness, and stability serve the knife’s intended work.</p>
-          </div>
-          <figure style={narrativeMediaStyle}>
-            <img src={asset('media/pages/why-mo/process/why-mo-process-heat-treatment-desktop-v1.avif')} alt="Precision heat treatment and blade logic detail" style={narrativeMediaImageStyle} />
+      <section className="section alt" style={sectionStyle}>
+        <div className="container" style={sectionWrapStyle}>
+          <LuxuryText label="CRAFT LOGIC" title="THE LOGIC OF THE BLADE">
+            Thermal refinement is tuned for resilience, retention, and the task the blade is expected to survive. Numbers without context are theater. The meaningful question is whether hardness, toughness, and stability serve the knife’s intended work.
+          </LuxuryText>
+          <figure style={mediaStyle}>
+            <img src={asset('media/pages/why-mo/process/why-mo-process-heat-treatment-desktop-v1.avif')} alt="Precision heat treatment and blade logic detail" style={mediaContentStyle} />
           </figure>
-          <div style={narrativeTextStyle}>
-            <p style={narrativeCopyStyle}>From edge thickness to grind choice, every line has to justify itself in contact. A knife can be beautifully finished and still feel wrong in the cut. Geometry is what decides resistance, bite, food release, durability, and control.</p>
-          </div>
+          <LuxuryText label="GEOMETRY DECIDES" title="EVERY LINE HAS TO JUSTIFY ITSELF">
+            From edge thickness to grind choice, every line has to justify itself in contact. A knife can be beautifully finished and still feel wrong in the cut. Geometry is what decides resistance, bite, food release, durability, and control.
+          </LuxuryText>
         </div>
       </section>
 
-      <section className="section" style={narrativeSectionStyle}>
-        <div className="container" style={narrativeWrapStyle}>
-          <div style={narrativeTextStyle}>
-            <p className="section-label">PERFORMANCE PROOF</p>
-            <h2 className="section-title">NO THEATER. ONLY<br />PERFORMANCE.</h2>
-            <p style={{ ...narrativeCopyStyle, ...firstParagraphAccentStyle }}>No cosmetic excess. No empty claims. Only honest construction that earns trust when the blade meets real resistance.</p>
-          </div>
-          <figure style={narrativeMediaStyle}>
-            <video autoPlay muted loop playsInline preload="metadata" poster={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-poster-desktop-v1.jpg')} aria-label="Performance proof cutting test video" style={narrativeMediaImageStyle}>
+      <section className="section" style={sectionStyle}>
+        <div className="container" style={sectionWrapStyle}>
+          <LuxuryText label="PERFORMANCE PROOF" title={<>NO THEATER. ONLY<br />PERFORMANCE.</>}>
+            No cosmetic excess. No empty claims. Only honest construction that earns trust when the blade meets real resistance.
+          </LuxuryText>
+          <figure style={mediaStyle}>
+            <video autoPlay muted loop playsInline preload="metadata" poster={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-poster-desktop-v1.jpg')} aria-label="Performance proof cutting test video" style={mediaContentStyle}>
               <source src={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-desktop-v1.mp4')} type="video/mp4" />
             </video>
           </figure>
-          <div style={narrativeTextStyle}>
-            <p style={narrativeCopyStyle}>Steel, heat treatment, and geometry only matter when performance confirms them. The bench, the stone, and the cut all have to agree before a theory earns trust.</p>
-          </div>
+          <LuxuryText label="BENCH. STONE. CUT." title="PROOF HAS TO AGREE">
+            Steel, heat treatment, and geometry only matter when performance confirms them. The bench, the stone, and the cut all have to agree before a theory earns trust.
+          </LuxuryText>
         </div>
       </section>
 
-      <section className="section alt" style={narrativeSectionStyle}>
-        <div className="container" style={narrativeWrapStyle}>
-          <div style={narrativeTextStyle}>
-            <p className="section-label">PROCESS PROOF</p>
-            <h2 className="section-title">BUILT IN STAGES,<br />PROVEN IN CONTACT</h2>
-            <p style={{ ...narrativeCopyStyle, ...firstParagraphAccentStyle }}>Forging, grinding, heat treatment, sharpening, and testing are not decorative chapters. They are the controlled sequence that turns material into a dependable tool.</p>
-          </div>
-          <figure style={narrativeMediaStyle}>
-            <img src={asset('media/pages/why-mo/process/why-mo-process-grinding-desktop-v1.png')} alt="Grinding and process proof inside the Mo workshop" style={narrativeMediaImageStyle} />
+      <section className="section alt" style={sectionStyle}>
+        <div className="container" style={sectionWrapStyle}>
+          <LuxuryText label="PROCESS PROOF" title={<>BUILT IN STAGES,<br />PROVEN IN CONTACT</>}>
+            Forging, grinding, heat treatment, sharpening, and testing are not decorative chapters. They are the controlled sequence that turns material into a dependable tool.
+          </LuxuryText>
+          <figure style={mediaStyle}>
+            <img src={asset('media/pages/why-mo/process/why-mo-process-grinding-desktop-v1.png')} alt="Grinding and process proof inside the Mo workshop" style={mediaContentStyle} />
           </figure>
-          <div style={narrativeTextStyle}>
-            <p style={narrativeCopyStyle}>Each stage has to support the next: the profile must serve the hand, the grind must serve the cut, the heat treatment must serve the steel, and the final edge must serve real use.</p>
-          </div>
+          <LuxuryText label="CONTROLLED SEQUENCE" title="EACH STAGE SUPPORTS THE NEXT">
+            Each stage has to support the next: the profile must serve the hand, the grind must serve the cut, the heat treatment must serve the steel, and the final edge must serve real use.
+          </LuxuryText>
         </div>
       </section>
 
-      <section className="section" style={narrativeSectionStyle}>
-        <div className="container" style={narrativeWrapStyle}>
-          <div style={narrativeTextStyle}>
-            <p className="section-label">TRUST LAYER</p>
-            <h2 className="section-title">FUNCTIONAL LEGACIES,<br />NOT DECORATIVE CLAIMS</h2>
-            <p style={{ ...narrativeCopyStyle, ...firstParagraphAccentStyle }}>ABS Member. Forging since 2015 under the name Mo. Building for the wild, the mission, the kitchen, and the long life of an heirloom.</p>
-          </div>
-          <figure style={narrativeMediaStyle}>
-            <img src={asset('media/pages/why-mo/proof/why-mo-proof-abs-member-desktop-v1.svg')} alt="ABS member and trust proof for Mo Knives" style={narrativeAbsImageStyle} />
+      <section className="section" style={sectionStyle}>
+        <div className="container" style={sectionWrapStyle}>
+          <LuxuryText label="TRUST LAYER" title={<>FUNCTIONAL LEGACIES,<br />NOT DECORATIVE CLAIMS</>}>
+            ABS Member. Forging since 2015 under the name Mo. Building for the wild, the mission, the kitchen, and the long life of an heirloom.
+          </LuxuryText>
+          <figure style={mediaStyle}>
+            <img src={asset('media/pages/why-mo/proof/why-mo-proof-abs-member-desktop-v1.svg')} alt="ABS member and trust proof for Mo Knives" style={absBadgeImageStyle} />
           </figure>
-          <div style={narrativeTextStyle}>
-            <p style={narrativeCopyStyle}>The goal is not to make every blade feel dramatic. The goal is to make every detail earn its place through construction, control, and proof.</p>
-          </div>
+          <LuxuryText label="DETAILS EARN THEIR PLACE" title="CONSTRUCTION. CONTROL. PROOF.">
+            The goal is not to make every blade feel dramatic. The goal is to make every detail earn its place through construction, control, and proof.
+          </LuxuryText>
         </div>
       </section>
 
       <section className="request-panel">
-        <div className="container request-inner">
-          <p className="section-label">NEXT STEP</p>
-          <h2 className="section-title">ENTER THE VAULT</h2>
-          <p className="section-copy centered-copy">Now that the reason is clear, enter the record. The Vault shows the real work that came out of this standard — the blades, the worlds they belong to, and the proof behind them.</p>
-          <a href="/the-vault" className="button-primary">ENTER THE VAULT</a>
+        <div style={{ ...luxuryPanelStyle, maxWidth: '880px' }}>
+          <p style={kickerStyle}>NEXT STEP</p>
+          <h2 style={sectionTitleStyle}>ENTER THE VAULT</h2>
+          <OrnateDivider />
+          <p style={copyStyle}>Now that the reason is clear, enter the record. The Vault shows the real work that came out of this standard — the blades, the worlds they belong to, and the proof behind them.</p>
+          <a href="/the-vault" className="button-primary" style={{ marginTop: 'clamp(24px, 5vw, 34px)' }}>ENTER THE VAULT</a>
         </div>
       </section>
     </main>
