@@ -1,4 +1,4 @@
-// File: /workspaces/moknives2804/app/layout.tsx
+// File: C:\Users\MOKNI\Desktop\moknives-nextjs-preview\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
