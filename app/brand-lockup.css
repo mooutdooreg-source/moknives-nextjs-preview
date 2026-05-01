@@ -77,24 +77,53 @@
   display: none;
 }
 
+.mobile-menu summary::marker {
+  content: '';
+}
+
+.mobile-menu summary span::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  margin-right: 8px;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  box-shadow: 0 3px 0 currentColor;
+  opacity: 0.9;
+}
+
+.mobile-menu[open] summary {
+  color: #111;
+  border-color: rgba(240, 162, 15, 0.95);
+  background: linear-gradient(135deg, #c96f04, #f0a20f 58%, #ffcf6a);
+  box-shadow: 0 14px 34px rgba(217, 119, 6, 0.28);
+}
+
+.mobile-menu__panel-wrap {
+  position: fixed;
+  left: 14px;
+  right: 14px;
+  top: 118px;
+  z-index: 120;
+}
+
 .mobile-menu__panel {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 12px);
-  z-index: 80;
-  min-width: 230px;
-  padding: 10px;
-  border: 1px solid rgba(240, 162, 15, 0.26);
-  border-radius: 18px;
-  background: rgba(5, 5, 5, 0.96);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(14px);
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(240, 162, 15, 0.28);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.98), rgba(3, 3, 3, 0.96));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
 }
 
 .mobile-menu__panel a {
   display: block;
-  padding: 13px 14px;
-  border-radius: 12px;
+  padding: 14px 14px;
+  border-radius: 14px;
   color: rgba(255, 255, 255, 0.86);
   font-size: 12px;
   font-weight: 800;
@@ -163,6 +192,28 @@
 .vault-hero-premium__copy:focus-within p {
   color: rgba(255, 255, 255, 0.96);
   text-shadow: 0 0 18px rgba(0, 0, 0, 0.86), 0 0 22px rgba(240, 162, 15, 0.22);
+}
+
+.vault-hero-premium__secondary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vault-hero-premium__secondary::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 232, 181, 0.18) 34%, rgba(240, 162, 15, 0.65) 50%, rgba(255, 232, 181, 0.18) 66%, transparent 100%);
+  transform: translateX(-115%);
+  transition: transform 620ms ease;
+}
+
+.vault-hero-premium__secondary:hover::before,
+.vault-hero-premium__secondary:focus-visible::before,
+.vault-hero-premium__secondary:active::before {
+  transform: translateX(115%);
 }
 
 .vault-hero-premium__secondary:hover,
@@ -309,9 +360,8 @@
     font-size: 9px;
   }
 
-  .mobile-menu__panel {
-    min-width: min(260px, 88vw);
-    right: 0;
+  .mobile-menu__panel-wrap {
+    top: 112px;
   }
 
   .media-hero {
