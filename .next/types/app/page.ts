@@ -1,4 +1,4 @@
-// File: /workspaces/moknives2804/app/page.tsx
+// File: C:\Users\MOKNI\Desktop\moknives-nextjs-preview\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
