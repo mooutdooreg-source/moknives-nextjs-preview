@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Request Entry to the commissioned process at Mo Knives. Each piece is forged to order, reviewed for fit, and accepted selectively.">
+  <title>Mo Knives | Request Entry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/asset-fallbacks.css">
+  <link rel="stylesheet" href="assets/css/media-wrappers.css">
+  <link rel="stylesheet" href="assets/css/pages/request-entry.css">
+  <script src="assets/js/layout.js" defer></script>
+  <script src="assets/js/media-resolver.js" defer></script>
+</head>
+
+<body class="font-sans antialiased selection:bg-forge-accent selection:text-white w-full" data-page="request-entry">
+
+    <div id="site-header"></div>
+
+  <main class="overflow-x-hidden">
+    <section
+      class="py-24 relative border-b border-forge-800 bg-[radial-gradient(circle_at_top_left,rgba(217,119,6,0.14),transparent_28%),linear-gradient(180deg,rgba(5,5,5,0.96),rgba(11,11,11,0.98))]">
+      <div
+        class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-forge-950/95 md:from-forge-950 via-forge-950/85 md:via-forge-950/60 to-forge-950/40 md:to-transparent">
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="mb-16 max-w-3xl fade-up">
+          <span class="text-forge-accent tracking-[0.4em] text-xs uppercase font-bold"><span class="hover-glow">REQUEST ENTRY</span></span>
+          <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl uppercase tracking-widest font-bold mt-4">
+            <span class="block text-white"><span class="hover-glow-white">THIS IS THE FIRST STEP</span></span>
+            <span class="block text-yellow-500 mt-2"><span class="hover-glow">INTO A COMMISSIONED PROCESS</span></span>
+          </h1>
+          <p class="mt-8 max-w-2xl text-xl text-forge-light/82 font-light">Each piece is forged to order. No stock. No replicas. No shortcuts.</p>
+          <p class="text-forge-light/62 mt-4 max-w-2xl">Built around your use, your hand, and your world. Entry is limited, and every request is reviewed before acceptance.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] gap-10 items-start">
+          <div class="space-y-8 fade-up">
+            <div class="grid md:grid-cols-3 gap-5 max-w-5xl">
+              <article class="path-card bg-forge-900/90 p-7 rounded-sm border border-forge-800/80">
+                <h3 class="uppercase text-sm tracking-[0.18em] font-bold mb-3 text-white">FOR THOSE WHO DEMAND PERFORMANCE WITHOUT COMPROMISE</h3>
+                <p class="text-sm text-forge-light/70">Custom builds shaped by use.</p>
+              </article>
+              <article class="path-card bg-forge-900/90 p-7 rounded-sm border border-forge-800/80">
+                <h3 class="uppercase text-sm tracking-[0.18em] font-bold mb-3 text-white">FOR THOSE WHO COLLECT WHAT CANNOT BE REPEATED</h3>
+                <p class="text-sm text-forge-light/70">One-of-one commissioned pieces.</p>
+              </article>
+              <article class="path-card bg-forge-900/90 p-7 rounded-sm border border-forge-800/80">
+                <h3 class="uppercase text-sm tracking-[0.18em] font-bold mb-3 text-white">FOR THOSE STILL FINDING THEIR WORLD</h3>
+                <p class="text-sm text-forge-light/70">Return to the Four Worlds before applying.</p>
+              </article>
+            </div>
+
+            <div class="bg-forge-900/80 border border-forge-800/80 rounded-sm p-8 max-w-3xl">
+              <p class="text-forge-accent text-[10px] uppercase tracking-[0.34em] font-bold mb-4">Restricted Access</p>
+              <h2 class="font-serif text-2xl uppercase tracking-[0.16em] text-white">Vanguard follows a separate review path.</h2>
+              <p class="text-forge-light/72 mt-5 leading-8">Vanguard is not publicly available. Access is limited to government entities, security professionals, and verified law enforcement personnel, subject to review and applicable regulations.</p>
+              <div class="mt-6">
+                <a href="vanguard-request.html" class="request-button">ARE YOU QUALIFIED?</a>
+              </div>
+            </div>
+
+            <div class="bg-forge-900/80 border border-forge-800/80 rounded-sm p-8 max-w-3xl">
+              <p class="text-forge-accent text-[10px] uppercase tracking-[0.34em] font-bold mb-4">Before You Submit</p>
+              <h2 class="font-serif text-2xl uppercase tracking-[0.16em] text-white">This is not a checkout.</h2>
+              <p class="text-forge-light/72 mt-5 leading-8">This page is a qualification gate for commissioned work. Approved requests move forward into direct discussion, scope, and next steps. Submission does not guarantee acceptance.</p>
+            </div>
+          </div>
+
+          <div class="fade-up bg-forge-900/92 border border-forge-800/90 rounded-sm p-8 md:p-10 shadow-[0_22px_50px_rgba(0,0,0,0.35)]">
+            <p class="text-forge-accent text-[10px] uppercase tracking-[0.34em] font-bold mb-3">Request Form</p>
+            <h2 class="font-serif text-2xl uppercase tracking-[0.15em] text-white mb-8">Request Entry</h2>
+            <form class="space-y-6" onsubmit="submitSuccess(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="text" placeholder="Full Name" aria-label="Full Name" class="form-input w-full px-5 py-4 text-sm" required>
+                <input type="email" placeholder="Email" aria-label="Email" class="form-input w-full px-5 py-4 text-sm" required>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="text" placeholder="Country" aria-label="Country" class="form-input w-full px-5 py-4 text-sm">
+                <select class="form-input w-full px-5 py-4 text-sm" aria-label="Preferred Contact Method" required>
+                  <option value="">Preferred Contact Method</option>
+                  <option>Email</option>
+                  <option>WhatsApp</option>
+                </select>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <select class="form-input w-full px-5 py-4 text-sm" aria-label="Which world fits your request?" required>
+                  <option value="">Which world fits your request?</option>
+                  <option>Expedition</option>
+                  <option>Culinary</option>
+                                    <option>Singularis</option>
+                  <option>Not sure yet</option>
+                </select>
+                <select class="form-input w-full px-5 py-4 text-sm" aria-label="What are you seeking?" required>
+                  <option value="">What are you seeking?</option>
+                  <option>Performance-driven custom build</option>
+                  <option>One-of-one commissioned piece</option>
+                  <option>Refinement of an existing idea</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="text" placeholder="Preferred blade size range" aria-label="Preferred blade size range" class="form-input w-full px-5 py-4 text-sm">
+                <select class="form-input w-full px-5 py-4 text-sm" aria-label="Handedness">
+                  <option value="">Handedness</option>
+                  <option>Right-handed</option>
+                  <option>Left-handed</option>
+                  <option>No preference</option>
+                </select>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <select class="form-input w-full px-5 py-4 text-sm" aria-label="Timeline">
+                  <option value="">Timeline</option>
+                  <option>Flexible</option>
+                  <option>1–3 months</option>
+                  <option>3–6 months</option>
+                  <option>Long-term project</option>
+                </select>
+                <select class="form-input w-full px-5 py-4 text-sm" aria-label="Budget Range">
+                  <option value="">Budget Range</option>
+                  <option>Open to discussion</option>
+                  <option>Premium working piece</option>
+                  <option>High-end commissioned build</option>
+                  <option>One-of-one collector level</option>
+                </select>
+              </div>
+              <input type="text" placeholder="Preferred steel or open to recommendation" aria-label="Preferred steel" class="form-input w-full px-5 py-4 text-sm">
+              <textarea placeholder="Describe the piece you have in mind, its intended use, and anything this request needs to answer." aria-label="Describe the piece you have in mind" rows="5" class="form-input w-full px-5 py-4 text-sm" required></textarea>
+              <div class="pt-2">
+                <p class="text-xs text-forge-light/52 mb-5 leading-6">Entry does not guarantee acceptance. If the project is aligned, the next step will be a direct conversation.</p>
+                <button type="submit" class="w-full py-5 bg-forge-accent text-white uppercase tracking-[0.3em] text-xs font-bold">SUBMIT REQUEST</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+    <div id="site-footer"></div>
+
+  <script>
+    if (window.lucide && typeof window.lucide.createIcons === 'function') { lucide.createIcons(); }
+    // Success message
+    function submitSuccess(e) {
+      if (e) e.preventDefault();
+      const msg = document.createElement('div');
+      msg.style.cssText = 'position:fixed;bottom:16px;right:16px;width:min(420px, calc(100vw - 32px));background:#d97706;color:#111;padding:18px 20px;border-radius:4px;font-size:13px;letter-spacing:0.5px;box-shadow:0 10px 15px -3px rgb(0 0 0 / 0.3);z-index:9999;line-height:1.6;';
+      msg.textContent = 'Your request has been received. If the project is aligned, the next step will be a direct conversation.';
+      document.body.appendChild(msg);
+      setTimeout(() => msg.remove(), 4500);
+
+      document.querySelectorAll('form').forEach(form => form.reset());
+      document.getElementById('commission-form').classList.add('hidden');
+      document.getElementById('limited-form').classList.add('hidden');
+      document.getElementById('inquiry-form').classList.add('hidden');
+    }
+
+    // Mobile menu
+
+    // Fade Up on Scroll Observer with Dynamic Stagger
+    const fadeObserver = new IntersectionObserver((entries) => {
+      let delay = 0;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('is-visible');
+          }, delay);
+          delay += 100;
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+  </script>
+  <script src="assets/js/photo-card-metadata.js"></script>
+</body>
+
+</html>
