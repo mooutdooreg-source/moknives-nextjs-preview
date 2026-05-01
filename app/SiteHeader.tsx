@@ -6,8 +6,8 @@ const asset = (path: string) => `/assets/${path}`;
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'The Vault', href: '/the-vault' },
   { label: 'Why Mo', href: '/why-mo' },
+  { label: 'The Vault', href: '/the-vault' },
   { label: 'Limited Drop', href: '/#limited-drop' },
   { label: 'Edge Academy', href: '/#edge-academy' },
   { label: 'Mo Gear', href: '/#mo-gear' },
