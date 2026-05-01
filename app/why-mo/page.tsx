@@ -8,16 +8,16 @@ const pageShellStyle: CSSProperties = {
 };
 
 const heroSectionStyle: CSSProperties = {
-  padding: 'clamp(74px, 10vw, 132px) 0 clamp(54px, 8vw, 96px)',
+  padding: 'clamp(58px, 9vw, 112px) 0 clamp(46px, 7vw, 84px)',
 };
 
 const luxuryPanelStyle: CSSProperties = {
   position: 'relative',
   width: 'min(1120px, calc(100% - 32px))',
   margin: '0 auto',
-  padding: 'clamp(34px, 7vw, 78px) clamp(20px, 6vw, 86px)',
+  padding: 'clamp(30px, 6vw, 70px) clamp(18px, 5vw, 78px)',
   border: '1px solid rgba(240,162,15,0.2)',
-  borderRadius: 'clamp(24px, 4vw, 42px)',
+  borderRadius: 'clamp(22px, 4vw, 42px)',
   background:
     'radial-gradient(circle at 50% 0%, rgba(240,162,15,0.13), transparent 32%), radial-gradient(circle at 50% 100%, rgba(217,119,6,0.09), transparent 30%), linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.012))',
   boxShadow:
@@ -27,35 +27,35 @@ const luxuryPanelStyle: CSSProperties = {
 };
 
 const sectionStyle: CSSProperties = {
-  padding: 'clamp(54px, 8vw, 104px) 0',
+  padding: 'clamp(46px, 7vw, 92px) 0',
 };
 
 const sectionWrapStyle: CSSProperties = {
   width: 'min(980px, calc(100% - 32px))',
   margin: '0 auto',
   display: 'grid',
-  gap: 'clamp(22px, 4vw, 36px)',
+  gap: 'clamp(20px, 4vw, 34px)',
 };
 
 const textPanelStyle: CSSProperties = {
   position: 'relative',
-  padding: 'clamp(30px, 7vw, 58px) clamp(20px, 6vw, 64px)',
-  border: '1px solid rgba(240,162,15,0.2)',
-  borderRadius: 'clamp(24px, 5vw, 38px)',
+  padding: 'clamp(24px, 5vw, 50px) clamp(20px, 5vw, 58px)',
+  border: '1px solid rgba(240,162,15,0.18)',
+  borderRadius: 'clamp(22px, 5vw, 36px)',
   background:
-    'radial-gradient(circle at 50% 0%, rgba(240,162,15,0.12), transparent 30%), linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.014))',
+    'radial-gradient(circle at 50% 0%, rgba(240,162,15,0.105), transparent 30%), linear-gradient(145deg, rgba(255,255,255,0.052), rgba(255,255,255,0.012))',
   boxShadow:
-    'inset 0 1px 0 rgba(255,255,255,0.07), inset 0 -36px 80px rgba(0,0,0,0.18), 0 28px 76px rgba(0,0,0,0.34)',
+    'inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -30px 72px rgba(0,0,0,0.16), 0 24px 68px rgba(0,0,0,0.3)',
   overflow: 'hidden',
-  textAlign: 'center',
+  textAlign: 'left',
 };
 
 const kickerStyle: CSSProperties = {
   margin: 0,
   color: '#f0a20f',
-  fontSize: 'clamp(10px, 2.4vw, 12px)',
+  fontSize: 'clamp(9px, 1.8vw, 12px)',
   fontWeight: 900,
-  letterSpacing: '0.34em',
+  letterSpacing: '0.26em',
   textTransform: 'uppercase',
 };
 
@@ -63,34 +63,43 @@ const heroTitleStyle: CSSProperties = {
   margin: 'clamp(18px, 4vw, 28px) auto clamp(14px, 3vw, 20px)',
   maxWidth: '900px',
   fontFamily: 'Cinzel, serif',
-  fontSize: 'clamp(58px, 12vw, 132px)',
-  lineHeight: 0.9,
-  letterSpacing: '-0.055em',
+  fontSize: 'clamp(46px, 10vw, 126px)',
+  lineHeight: 0.92,
+  letterSpacing: '-0.052em',
   textTransform: 'uppercase',
   color: 'rgba(255,250,242,0.98)',
   textShadow: '0 1px 0 rgba(255,255,255,0.18), 0 24px 46px rgba(0,0,0,0.55)',
 };
 
 const sectionTitleStyle: CSSProperties = {
-  margin: 'clamp(16px, 4vw, 28px) auto clamp(12px, 3vw, 18px)',
+  margin: 'clamp(14px, 3vw, 24px) 0 clamp(10px, 2vw, 14px)',
   maxWidth: '760px',
   fontFamily: 'Cinzel, serif',
-  fontSize: 'clamp(34px, 8vw, 68px)',
-  lineHeight: 1.02,
-  letterSpacing: '-0.035em',
+  fontSize: 'clamp(27px, 6vw, 58px)',
+  lineHeight: 1.05,
+  letterSpacing: '-0.025em',
   textTransform: 'uppercase',
   color: 'rgba(255,250,242,0.98)',
-  textShadow: '0 1px 0 rgba(255,255,255,0.14), 0 18px 38px rgba(0,0,0,0.52)',
+  textShadow: '0 1px 0 rgba(255,255,255,0.12), 0 16px 34px rgba(0,0,0,0.48)',
 };
 
 const copyStyle: CSSProperties = {
-  maxWidth: '760px',
-  margin: 'clamp(18px, 4vw, 28px) auto 0',
-  color: 'rgba(245,245,245,0.86)',
-  fontSize: 'clamp(16px, 4.2vw, 20px)',
-  lineHeight: 1.9,
-  letterSpacing: '0.012em',
+  maxWidth: '680px',
+  margin: 'clamp(14px, 3vw, 22px) 0 0',
+  color: 'rgba(245,245,245,0.83)',
+  fontSize: 'clamp(14.5px, 2.8vw, 18px)',
+  lineHeight: 1.72,
+  letterSpacing: '0.005em',
   fontWeight: 400,
+};
+
+const heroCopyStyle: CSSProperties = {
+  ...copyStyle,
+  maxWidth: '760px',
+  margin: 'clamp(16px, 3vw, 24px) auto 0',
+  textAlign: 'center',
+  fontSize: 'clamp(15px, 2.5vw, 19px)',
+  lineHeight: 1.76,
 };
 
 const mediaStyle: CSSProperties = {
@@ -126,8 +135,13 @@ const dividerWrapStyle: CSSProperties = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: 'clamp(10px, 3vw, 18px)',
-  width: 'min(360px, 78%)',
-  margin: 'clamp(16px, 4vw, 24px) auto',
+  width: 'min(300px, 72%)',
+  margin: 'clamp(14px, 3vw, 22px) 0',
+};
+
+const centeredDividerWrapStyle: CSSProperties = {
+  ...dividerWrapStyle,
+  margin: 'clamp(14px, 3vw, 22px) auto',
 };
 
 const dividerLineStyle: CSSProperties = {
@@ -151,9 +165,9 @@ const dividerMarkStyle: CSSProperties = {
   boxShadow: '0 0 16px rgba(240,162,15,0.36)',
 };
 
-function OrnateDivider() {
+function OrnateDivider({ centered = false }: { centered?: boolean }) {
   return (
-    <div style={dividerWrapStyle} aria-hidden="true">
+    <div style={centered ? centeredDividerWrapStyle : dividerWrapStyle} aria-hidden="true">
       <span style={dividerLineStyle} />
       <span style={dividerMarkStyle} />
       <span style={dividerLineRightStyle} />
@@ -198,9 +212,9 @@ export default function WhyMoPage() {
           </figure>
           <p style={kickerStyle}>WHY MO / ORIGIN</p>
           <h1 style={heroTitleStyle}>WHY MO</h1>
-          <OrnateDivider />
-          <p style={copyStyle}>My work did not begin at the anvil. It began in the field — as a hunter, angler, and open-fire cook — shaped by the demanding reality of use.</p>
-          <p style={copyStyle}>Not a gallery. Not a marketplace. A living record of functional legacies — built to explain why the work deserves trust before it asks for attention.</p>
+          <OrnateDivider centered />
+          <p style={heroCopyStyle}>My work did not begin at the anvil. It began in the field — as a hunter, angler, and open-fire cook — shaped by the demanding reality of use.</p>
+          <p style={heroCopyStyle}>Not a gallery. Not a marketplace. A living record of functional legacies — built to explain why the work deserves trust before it asks for attention.</p>
         </div>
       </section>
 
@@ -279,9 +293,9 @@ export default function WhyMoPage() {
       <section className="request-panel">
         <div style={{ ...luxuryPanelStyle, maxWidth: '880px' }}>
           <p style={kickerStyle}>NEXT STEP</p>
-          <h2 style={sectionTitleStyle}>ENTER THE VAULT</h2>
-          <OrnateDivider />
-          <p style={copyStyle}>Now that the reason is clear, enter the record. The Vault shows the real work that came out of this standard — the blades, the worlds they belong to, and the proof behind them.</p>
+          <h2 style={{ ...sectionTitleStyle, textAlign: 'center', marginInline: 'auto' }}>ENTER THE VAULT</h2>
+          <OrnateDivider centered />
+          <p style={heroCopyStyle}>Now that the reason is clear, enter the record. The Vault shows the real work that came out of this standard — the blades, the worlds they belong to, and the proof behind them.</p>
           <a href="/the-vault" className="button-primary" style={{ marginTop: 'clamp(24px, 5vw, 34px)' }}>ENTER THE VAULT</a>
         </div>
       </section>
