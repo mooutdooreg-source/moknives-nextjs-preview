@@ -19,35 +19,56 @@
   box-shadow: 0 24px 78px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.065);
 }
 
-/* HERO: keep image visible, place readable text panel over a lighter gradient */
+/* HERO: true split showcase */
 .mk-premium-hero {
-  min-height: clamp(560px, 74vh, 740px);
+  min-height: clamp(520px, 68vh, 720px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
+  align-items: stretch;
 }
 
 .mk-premium-hero__bg {
+  position: relative;
+  inset: auto;
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
   opacity: 1;
-  filter: brightness(0.96) contrast(1.03) saturate(0.98);
+  filter: brightness(0.98) contrast(1.03) saturate(0.98);
+  object-fit: cover;
+  object-position: center top;
 }
 
 .mk-premium-hero__shade {
+  position: relative;
+  inset: auto;
+  grid-column: 1;
+  grid-row: 1;
+  pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0.52) 42%, rgba(0,0,0,0.14) 100%),
-    linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.18) 54%, rgba(0,0,0,0.58) 100%);
+    linear-gradient(90deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.04) 54%, rgba(0,0,0,0.30) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.24) 100%);
 }
 
 .mk-premium-hero__inner {
+  grid-column: 2;
+  grid-row: 1;
   position: relative;
-  width: min(620px, calc(100% - 48px));
-  margin-left: clamp(20px, 6vw, 70px);
-  margin-right: auto;
-  padding: clamp(24px, 5vw, 44px);
-  border: 1px solid rgba(240,162,15,0.16);
-  border-radius: 28px;
+  z-index: 2;
+  width: 100%;
+  min-height: inherit;
+  margin: 0;
+  padding: clamp(30px, 5vw, 58px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   background:
-    radial-gradient(circle at 0% 0%, rgba(240,162,15,0.13), transparent 36%),
-    linear-gradient(145deg, rgba(0,0,0,0.70), rgba(0,0,0,0.40));
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.065), 0 24px 64px rgba(0,0,0,0.30);
-  backdrop-filter: blur(8px);
+    radial-gradient(circle at 0% 0%, rgba(240,162,15,0.13), transparent 34%),
+    linear-gradient(145deg, rgba(16,12,8,0.96), rgba(4,4,4,0.98));
+  border-left: 1px solid rgba(240,162,15,0.18);
 }
 
 .mk-premium-title {
@@ -174,11 +195,13 @@
 }
 
 @media (max-width: 860px) {
+  .mk-premium-hero,
   .mk-premium-card,
   #vault .mk-premium-card {
     grid-template-columns: 1fr;
   }
 
+  .mk-premium-hero__bg,
   .mk-premium-card__bg,
   #vault .mk-premium-card__bg {
     grid-column: 1;
@@ -188,6 +211,7 @@
     aspect-ratio: 4 / 3;
   }
 
+  .mk-premium-hero__shade,
   .mk-premium-card__shade,
   #vault .mk-premium-card__shade {
     grid-column: 1;
@@ -195,10 +219,12 @@
     background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.20));
   }
 
+  .mk-premium-hero__inner,
   .mk-premium-card__content,
   #vault .mk-premium-card__content {
     grid-column: 1;
     grid-row: 2;
+    min-height: auto;
     border-left: 0;
     border-right: 0;
     border-top: 1px solid rgba(240,162,15,0.18);
@@ -212,27 +238,29 @@
   }
 
   .mk-premium-hero {
-    min-height: 600px;
+    min-height: auto;
   }
 
   .mk-premium-hero__bg {
+    aspect-ratio: 4 / 3;
+    min-height: 260px;
     object-position: center top;
+    filter: brightness(0.98) contrast(1.04) saturate(0.98);
   }
 
   .mk-premium-hero__shade {
-    background:
-      linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.15) 34%, rgba(0,0,0,0.62) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.20));
   }
 
   .mk-premium-hero__inner {
     width: auto;
-    max-width: calc(100% - 28px);
-    margin: auto 14px 16px;
-    padding: 22px 18px;
-    border-radius: 22px;
+    max-width: none;
+    margin: 0;
+    padding: 24px 20px 26px;
+    border-radius: 0;
     background:
       radial-gradient(circle at 0% 0%, rgba(240,162,15,0.12), transparent 34%),
-      linear-gradient(145deg, rgba(0,0,0,0.68), rgba(0,0,0,0.42));
+      linear-gradient(145deg, rgba(16,12,8,0.96), rgba(4,4,4,0.98));
   }
 
   .mk-premium-title {
