@@ -1,4 +1,4 @@
-/** Tailwind CDN browser config — must use tailwind.config, NOT module.exports */
+﻿/** Tailwind CDN browser config â€” must use tailwind.config, NOT module.exports */
 tailwind.config = {
   theme: {
     extend: {
@@ -20,3 +20,4 @@ tailwind.config = {
     }
   }
 }
+

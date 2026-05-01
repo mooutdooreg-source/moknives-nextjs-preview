@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const records = window.MOK_RECORDS || {};
   const params = new URLSearchParams(window.location.search);
   const requestedId = params.get('record');
@@ -13,14 +13,14 @@
   document.title = `Mo Knives | ${record.title}`;
   setText('[data-record-tag]', record.tag);
   setText('[data-record-title]', record.title);
-  setText('[data-record-meta]', `${record.world} • ${record.status}`);
+  setText('[data-record-meta]', `${record.world} â€¢ ${record.status}`);
   setText('[data-record-note]', record.note);
   setText('[data-record-story]', record.story);
   setText('[data-record-world]', record.world);
   setText('[data-record-status]', record.status);
   setText('[data-record-archive]', record.archiveNote);
   setText('[data-record-request-label]', record.requestLabel || 'Request Entry');
-  setHref('[data-record-request-link]', record.requestHref || 'request-entry.html');
+  setHref('[data-record-request-link]', record.requestHref || '/request-entry');
 
   const heroWrap = $('[data-record-hero]');
   if (heroWrap && record.hero) {
@@ -50,7 +50,7 @@
     if (!lightboxImg || !images.length) return;
     lightboxImg.src = images[current];
     lightboxImg.alt = `${record.title} fullscreen image ${current + 1}`;
-    if (lightboxCaption) lightboxCaption.textContent = `${record.title} • image ${current + 1} of ${images.length}`;
+    if (lightboxCaption) lightboxCaption.textContent = `${record.title} â€¢ image ${current + 1} of ${images.length}`;
   };
   const open = (index) => {
     if (!lightbox || !images.length) return;
@@ -88,3 +88,5 @@
     if (event.key === 'ArrowRight') move(1);
   });
 })();
+
+

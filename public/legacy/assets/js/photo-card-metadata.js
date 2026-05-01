@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const seen = new WeakSet();
 
   const cleanPath = (url) => {
@@ -139,3 +139,5 @@
     window.addEventListener('load', run, { once: true });
   }
 })();
+
+
