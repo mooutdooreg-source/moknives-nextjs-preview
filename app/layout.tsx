@@ -1,6 +1,7 @@
 import './globals.css';
 import './brand-lockup.css';
 import './no-duplicate-request.css';
+import './premium-system.css';
 import SiteHeader from './SiteHeader';
 
 export const metadata = {
