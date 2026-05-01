@@ -7,7 +7,6 @@ type RecordItem = {
   id: string;
   label: string;
   title: string;
-  description: string;
   world: string;
   status: string;
   video: string;
@@ -19,7 +18,6 @@ const records: RecordItem[] = [
     id: '042',
     label: 'Record 042',
     title: 'Expedition Pattern',
-    description: 'Forged for extended field use and durability.',
     world: 'Expedition',
     status: 'Archived / Sold',
     video: '/assets/media/pages/expedition/hero/expedition-hero-bg-desktop-v1.mp4',
@@ -29,7 +27,6 @@ const records: RecordItem[] = [
     id: '043',
     label: 'Record 043',
     title: 'Culinary Pattern',
-    description: 'Forged for extended field use and durability.',
     world: 'Culinary',
     status: 'Archived / Sold',
     video: '/assets/media/pages/culinary/hero/culinary-hero-bg-desktop-v1.mp4',
@@ -39,7 +36,6 @@ const records: RecordItem[] = [
     id: '044',
     label: 'Record 044',
     title: 'Vanguard Pattern',
-    description: 'Forged for extended field use and durability.',
     world: 'Vanguard',
     status: 'Archived / Sold',
     video: '/assets/media/pages/vanguard/hero/vanguard-hero-bg-desktop-v1.mp4',
@@ -49,7 +45,6 @@ const records: RecordItem[] = [
     id: '045',
     label: 'Record 045',
     title: 'Singularis Pattern',
-    description: 'Forged for extended field use and durability.',
     world: 'Singularis',
     status: 'Archived / Sold',
     video: '/assets/media/pages/singularis/hero/singularis-hero-bg-desktop-v1.mp4',
@@ -176,7 +171,6 @@ export default function VaultRecordRail() {
                 <div className={styles.cardBody}>
                   <p className={styles.cardMeta}>Verified Entry</p>
                   <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <p className={styles.cardDesc}>{item.description}</p>
 
                   <div className={styles.specs}>
                     <div className={styles.specRow}><span>World</span><strong>{item.world}</strong></div>
@@ -224,7 +218,6 @@ export default function VaultRecordRail() {
             <div className={styles.viewerBody}>
               <p className={styles.cardMeta}>Verified Entry</p>
               <h3 className={styles.viewerTitle}>{viewerRecord.title}</h3>
-              <p className={styles.viewerDesc}>{viewerRecord.description}</p>
 
               <div className={styles.specs}>
                 <div className={styles.specRow}><span>World</span><strong>{viewerRecord.world}</strong></div>
