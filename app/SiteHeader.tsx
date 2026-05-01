@@ -46,12 +46,16 @@ export default function SiteHeader() {
         <div className="header-actions">
           <a href="/request-entry" className="request-button">Request Entry</a>
           <details className="mobile-menu">
-            <summary aria-label="Open menu">Menu</summary>
-            <nav className="mobile-menu__panel" aria-label="Mobile navigation">
-              {navItems.map((item) => (
-                <a key={item.label} href={item.href} className={isActive(pathname, item.href) ? 'is-active' : ''}>{item.label}</a>
-              ))}
-            </nav>
+            <summary aria-label="Open menu">
+              <span>Menu</span>
+            </summary>
+            <div className="mobile-menu__panel-wrap">
+              <nav className="mobile-menu__panel" aria-label="Mobile navigation">
+                {navItems.map((item) => (
+                  <a key={item.label} href={item.href} className={isActive(pathname, item.href) ? 'is-active' : ''}>{item.label}</a>
+                ))}
+              </nav>
+            </div>
           </details>
         </div>
       </div>
