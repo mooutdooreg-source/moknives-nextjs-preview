@@ -138,7 +138,7 @@
   background: rgba(240, 162, 15, 0.09);
 }
 
-/* Lighter home hero overlay while keeping copy readable. */
+/* Unified premium hero treatment. */
 .hero-overlay {
   background:
     linear-gradient(90deg, rgba(0,0,0,0.64) 0%, rgba(0,0,0,0.42) 40%, rgba(0,0,0,0.08) 100%),
@@ -149,6 +149,81 @@
 .vault-hero-premium__bg {
   object-fit: cover;
   object-position: center;
+}
+
+.badge-row,
+.hero-copy,
+.hero-actions .button-secondary,
+.page-hero-simple .section-label,
+.page-hero-simple .section-copy {
+  transition:
+    transform 260ms ease,
+    color 260ms ease,
+    text-shadow 260ms ease,
+    letter-spacing 260ms ease,
+    border-color 260ms ease,
+    background 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.hero-inner:hover .badge-row,
+.hero-inner:focus-within .badge-row,
+.page-hero-simple:hover .section-label,
+.page-hero-simple:focus-within .section-label {
+  color: #ffc04a;
+  letter-spacing: 0.18em;
+  text-shadow: 0 0 18px rgba(240, 162, 15, 0.42), 0 0 18px rgba(0, 0, 0, 0.78);
+}
+
+.hero-inner:hover .hero-copy,
+.hero-inner:focus-within .hero-copy,
+.page-hero-simple:hover .section-copy,
+.page-hero-simple:focus-within .section-copy {
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.92), 0 0 22px rgba(240, 162, 15, 0.18);
+}
+
+.hero-actions .button-secondary,
+.vault-hero-premium__secondary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-actions .button-secondary::before,
+.vault-hero-premium__secondary::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 232, 181, 0.18) 34%, rgba(240, 162, 15, 0.65) 50%, rgba(255, 232, 181, 0.18) 66%, transparent 100%);
+  transform: translateX(-115%);
+  transition: transform 620ms ease;
+}
+
+.hero-actions .button-secondary:hover::before,
+.hero-actions .button-secondary:focus-visible::before,
+.hero-actions .button-secondary:active::before,
+.vault-hero-premium__secondary:hover::before,
+.vault-hero-premium__secondary:focus-visible::before,
+.vault-hero-premium__secondary:active::before {
+  transform: translateX(115%);
+}
+
+.hero-actions .button-secondary:hover,
+.hero-actions .button-secondary:focus-visible,
+.vault-hero-premium__secondary:hover,
+.vault-hero-premium__secondary:focus-visible {
+  transform: translateY(-2px);
+  color: #111 !important;
+  border-color: rgba(240, 162, 15, 0.92) !important;
+  background: linear-gradient(135deg, #c96f04, #f0a20f 58%, #ffcf6a) !important;
+  box-shadow: 0 18px 42px rgba(217, 119, 6, 0.34), 0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+}
+
+.hero-actions .button-secondary:active,
+.vault-hero-premium__secondary:active {
+  transform: translateY(0) scale(0.985);
 }
 
 /* Vault hero: show the image cleanly, without dark overlay or blur. */
@@ -192,41 +267,6 @@
 .vault-hero-premium__copy:focus-within p {
   color: rgba(255, 255, 255, 0.96);
   text-shadow: 0 0 18px rgba(0, 0, 0, 0.86), 0 0 22px rgba(240, 162, 15, 0.22);
-}
-
-.vault-hero-premium__secondary {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.vault-hero-premium__secondary::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  z-index: -1;
-  background: linear-gradient(120deg, transparent 0%, rgba(255, 232, 181, 0.18) 34%, rgba(240, 162, 15, 0.65) 50%, rgba(255, 232, 181, 0.18) 66%, transparent 100%);
-  transform: translateX(-115%);
-  transition: transform 620ms ease;
-}
-
-.vault-hero-premium__secondary:hover::before,
-.vault-hero-premium__secondary:focus-visible::before,
-.vault-hero-premium__secondary:active::before {
-  transform: translateX(115%);
-}
-
-.vault-hero-premium__secondary:hover,
-.vault-hero-premium__secondary:focus-visible {
-  transform: translateY(-2px);
-  color: #111 !important;
-  border-color: rgba(240, 162, 15, 0.92) !important;
-  background: linear-gradient(135deg, #c96f04, #f0a20f 58%, #ffcf6a) !important;
-  box-shadow: 0 18px 42px rgba(217, 119, 6, 0.34), 0 0 0 1px rgba(255, 255, 255, 0.18) inset;
-}
-
-.vault-hero-premium__secondary:active {
-  transform: translateY(0) scale(0.985);
 }
 
 /* Home Vault link card: image-backed CTA section. */
@@ -374,6 +414,64 @@
     width: calc(100% - 34px);
     padding-top: 34px;
     padding-bottom: 46px;
+  }
+
+  .badge-row {
+    gap: 14px !important;
+    font-size: clamp(13px, 3.7vw, 16px) !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.08em !important;
+    color: rgba(255, 255, 255, 0.94) !important;
+    text-shadow: 0 0 16px rgba(0, 0, 0, 0.9);
+  }
+
+  .badge-row img {
+    height: 44px !important;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    font-size: clamp(21px, 5.5vw, 26px) !important;
+    line-height: 1.48 !important;
+    color: rgba(255, 255, 255, 0.96) !important;
+    text-shadow: 0 0 18px rgba(0, 0, 0, 0.95);
+  }
+
+  .hero-actions {
+    width: 100%;
+    margin-top: 34px;
+  }
+
+  .hero-actions .button-secondary {
+    width: min(100%, 390px);
+    min-height: 64px !important;
+    padding: 18px 24px !important;
+    font-size: 14px !important;
+    letter-spacing: 0.14em !important;
+    border-color: rgba(255, 255, 255, 0.36) !important;
+    background: rgba(0, 0, 0, 0.22) !important;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .hero-actions .button-secondary:active,
+  .hero-actions .button-secondary:focus-visible {
+    color: #111 !important;
+    background: linear-gradient(135deg, #c96f04, #f0a20f 58%, #ffcf6a) !important;
+    border-color: rgba(240, 162, 15, 0.95) !important;
+    box-shadow: 0 18px 46px rgba(217, 119, 6, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  }
+
+  .page-hero-simple .section-label {
+    font-size: 15px !important;
+    line-height: 1.25;
+    letter-spacing: 0.32em !important;
+    text-shadow: 0 0 14px rgba(0, 0, 0, 0.9), 0 0 14px rgba(240, 162, 15, 0.18);
+  }
+
+  .page-hero-simple .section-copy {
+    font-size: clamp(17px, 4.4vw, 20px) !important;
+    line-height: 1.7 !important;
+    color: rgba(255, 255, 255, 0.92) !important;
   }
 
   .vault-hero-premium__inner {
