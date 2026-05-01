@@ -1,228 +1,31 @@
-import type { CSSProperties, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 const asset = (path: string) => `/assets/${path}`;
 
-const pageShellStyle: CSSProperties = {
-  maxWidth: '100%',
-  overflowX: 'hidden',
-  background:
-    'radial-gradient(circle at 50% 2%, rgba(240,162,15,0.12), transparent 22%), radial-gradient(circle at 8% 24%, rgba(217,119,6,0.08), transparent 24%), linear-gradient(180deg, #050505 0%, #090704 42%, #050505 100%)',
-};
-
-const heroSectionStyle: CSSProperties = {
-  maxWidth: '100%',
-  overflowX: 'hidden',
-  padding: 'clamp(48px, 8vw, 112px) 0 clamp(40px, 7vw, 84px)',
-};
-
-const luxuryPanelStyle: CSSProperties = {
-  position: 'relative',
-  width: 'min(1120px, calc(100vw - 32px))',
-  maxWidth: '100%',
-  margin: '0 auto',
-  padding: 'clamp(26px, 5vw, 70px) clamp(16px, 5vw, 78px)',
-  border: '1px solid rgba(240,162,15,0.2)',
-  borderRadius: 'clamp(22px, 4vw, 42px)',
-  background:
-    'radial-gradient(circle at 50% 0%, rgba(240,162,15,0.13), transparent 32%), radial-gradient(circle at 50% 100%, rgba(217,119,6,0.09), transparent 30%), linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.012))',
-  boxShadow:
-    'inset 0 1px 0 rgba(255,255,255,0.07), inset 0 0 80px rgba(0,0,0,0.34), 0 30px 90px rgba(0,0,0,0.38)',
-  overflow: 'hidden',
-  textAlign: 'center',
-};
-
-const sectionStyle: CSSProperties = {
-  maxWidth: '100%',
-  overflowX: 'hidden',
-  padding: 'clamp(42px, 7vw, 92px) 0',
-};
-
-const sectionWrapStyle: CSSProperties = {
-  width: 'min(900px, calc(100vw - 32px))',
-  maxWidth: '100%',
-  margin: '0 auto',
-  display: 'grid',
-  gap: 'clamp(18px, 4vw, 32px)',
-  justifyItems: 'stretch',
-};
-
-const textPanelStyle: CSSProperties = {
-  position: 'relative',
-  width: '100%',
-  maxWidth: '100%',
-  margin: 0,
-  padding: 'clamp(22px, 5vw, 46px) clamp(18px, 5vw, 54px)',
-  border: '1px solid rgba(240,162,15,0.18)',
-  borderRadius: 'clamp(22px, 5vw, 36px)',
-  background:
-    'radial-gradient(circle at 50% 0%, rgba(240,162,15,0.105), transparent 30%), linear-gradient(145deg, rgba(255,255,255,0.052), rgba(255,255,255,0.012))',
-  boxShadow:
-    'inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -30px 72px rgba(0,0,0,0.16), 0 24px 68px rgba(0,0,0,0.3)',
-  overflow: 'hidden',
-  textAlign: 'left',
-};
-
-const kickerStyle: CSSProperties = {
-  margin: 0,
-  color: '#f0a20f',
-  fontSize: 'clamp(9px, 1.8vw, 12px)',
-  fontWeight: 900,
-  letterSpacing: '0.22em',
-  textTransform: 'uppercase',
-};
-
-const heroTitleStyle: CSSProperties = {
-  margin: 'clamp(18px, 4vw, 28px) auto clamp(14px, 3vw, 20px)',
-  maxWidth: '100%',
-  fontFamily: 'Cinzel, serif',
-  fontSize: 'clamp(42px, 9vw, 126px)',
-  lineHeight: 0.94,
-  letterSpacing: '-0.045em',
-  textTransform: 'uppercase',
-  color: 'rgba(255,250,242,0.98)',
-  textShadow: '0 1px 0 rgba(255,255,255,0.18), 0 24px 46px rgba(0,0,0,0.55)',
-};
-
-const sectionTitleStyle: CSSProperties = {
-  margin: 'clamp(14px, 3vw, 24px) 0 clamp(10px, 2vw, 14px)',
-  maxWidth: '100%',
-  fontFamily: 'Cinzel, serif',
-  fontSize: 'clamp(25px, 5.5vw, 54px)',
-  lineHeight: 1.07,
-  letterSpacing: '-0.02em',
-  textTransform: 'uppercase',
-  color: 'rgba(255,250,242,0.98)',
-  textShadow: '0 1px 0 rgba(255,255,255,0.12), 0 16px 34px rgba(0,0,0,0.48)',
-};
-
-const copyStyle: CSSProperties = {
-  maxWidth: '620px',
-  margin: 'clamp(14px, 3vw, 22px) 0 0',
-  color: 'rgba(245,245,245,0.83)',
-  fontSize: 'clamp(14.5px, 2.8vw, 18px)',
-  lineHeight: 1.72,
-  letterSpacing: '0.005em',
-  fontWeight: 400,
-};
-
-const heroCopyStyle: CSSProperties = {
-  ...copyStyle,
-  maxWidth: '720px',
-  margin: 'clamp(16px, 3vw, 24px) auto 0',
-  textAlign: 'center',
-  fontSize: 'clamp(15px, 2.5vw, 19px)',
-  lineHeight: 1.76,
-};
-
-const mediaStyle: CSSProperties = {
-  position: 'relative',
-  display: 'block',
-  width: '100%',
-  maxWidth: '100%',
-  margin: 0,
-  aspectRatio: '4 / 5',
-  minHeight: 0,
-  overflow: 'hidden',
-  borderRadius: 'clamp(22px, 5vw, 36px)',
-  border: '1px solid rgba(240,162,15,0.24)',
-  background: 'rgba(255,255,255,0.035)',
-  boxShadow: '0 30px 86px rgba(0,0,0,0.42), 0 0 0 1px rgba(255,255,255,0.04) inset',
-};
-
-const imageContentStyle: CSSProperties = {
-  width: '100%',
-  height: '100%',
-  minHeight: 0,
-  objectFit: 'cover',
-};
-
-const videoMediaStyle: CSSProperties = {
-  ...mediaStyle,
-  margin: 0,
-  aspectRatio: '16 / 9',
-  background: '#050505',
-};
-
-const videoContentStyle: CSSProperties = {
-  width: '100%',
-  height: '100%',
-  minHeight: 0,
-  objectFit: 'contain',
-  background: '#050505',
-};
-
-const absBadgeImageStyle: CSSProperties = {
-  width: '100%',
-  height: '100%',
-  minHeight: 0,
-  objectFit: 'contain',
-  padding: 'clamp(42px, 13vw, 98px)',
-  background:
-    'radial-gradient(circle at 50% 42%, rgba(240,162,15,0.16), rgba(255,255,255,0.018) 58%, rgba(0,0,0,0.2))',
-};
-
-const dividerWrapStyle: CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: 'clamp(10px, 3vw, 18px)',
-  width: 'min(300px, 72%)',
-  maxWidth: '100%',
-  margin: 'clamp(14px, 3vw, 22px) 0',
-};
-
-const centeredDividerWrapStyle: CSSProperties = {
-  ...dividerWrapStyle,
-  margin: 'clamp(14px, 3vw, 22px) auto',
-};
-
-const dividerLineStyle: CSSProperties = {
-  height: '1px',
-  flex: 1,
-  background: 'linear-gradient(90deg, transparent, rgba(240,162,15,0.72))',
-  boxShadow: '0 0 18px rgba(240,162,15,0.18)',
-};
-
-const dividerLineRightStyle: CSSProperties = {
-  ...dividerLineStyle,
-  background: 'linear-gradient(90deg, rgba(240,162,15,0.72), transparent)',
-};
-
-const dividerMarkStyle: CSSProperties = {
-  width: '7px',
-  height: '7px',
-  transform: 'rotate(45deg)',
-  border: '1px solid rgba(240,162,15,0.78)',
-  background: 'rgba(240,162,15,0.28)',
-  boxShadow: '0 0 16px rgba(240,162,15,0.36)',
-};
-
 function OrnateDivider({ centered = false }: { centered?: boolean }) {
   return (
-    <div style={centered ? centeredDividerWrapStyle : dividerWrapStyle} aria-hidden="true">
-      <span style={dividerLineStyle} />
-      <span style={dividerMarkStyle} />
-      <span style={dividerLineRightStyle} />
+    <div className={`mk-divider${centered ? ' mk-divider--center' : ''}`} aria-hidden="true">
+      <span />
     </div>
   );
 }
 
 function LuxuryText({ label, title, children }: { label: string; title: ReactNode; children: ReactNode }) {
   return (
-    <div style={textPanelStyle}>
-      <p style={kickerStyle}>{label}</p>
-      <h2 style={sectionTitleStyle}>{title}</h2>
+    <div className="mk-story-text">
+      <p className="mk-premium-label">{label}</p>
+      <h2 className="mk-story-title">{title}</h2>
       <OrnateDivider />
-      <p style={copyStyle}>{children}</p>
+      <p className="mk-story-copy">{children}</p>
     </div>
   );
 }
 
 export default function WhyMoPage() {
   return (
-    <main className="page-shell" style={pageShellStyle}>
-      <section className="section page-hero-simple" style={heroSectionStyle}>
-        <div style={luxuryPanelStyle}>
+    <main className="page-shell mk-premium-page">
+      <section className="section page-hero-simple mk-page-hero">
+        <div className="mk-luxury-panel">
           <figure
             className="why-mo-hero-badge"
             style={{
@@ -235,28 +38,23 @@ export default function WhyMoPage() {
             <img
               src={asset('media/pages/why-mo/hero/why-mo-hero-custom-maker-bladesmith-badge-desktop-v1.png')}
               alt="Custom knife maker and bladesmith badge"
-              style={{
-                width: '100%',
-                height: 'auto',
-                objectFit: 'contain',
-              }}
             />
           </figure>
-          <p style={kickerStyle}>WHY MO / ORIGIN</p>
-          <h1 style={heroTitleStyle}>WHY MO</h1>
+          <p className="mk-premium-label">WHY MO / ORIGIN</p>
+          <h1 className="mk-premium-page-title">WHY MO</h1>
           <OrnateDivider centered />
-          <p style={heroCopyStyle}>My work did not begin at the anvil. It began in the field — as a hunter, angler, and open-fire cook — shaped by the demanding reality of use.</p>
-          <p style={heroCopyStyle}>Not a gallery. Not a marketplace. A living record of functional legacies — built to explain why the work deserves trust before it asks for attention.</p>
+          <p className="mk-premium-centered-copy">My work did not begin at the anvil. It began in the field — as a hunter, angler, and open-fire cook — shaped by the demanding reality of use.</p>
+          <p className="mk-premium-centered-copy">Not a gallery. Not a marketplace. A living record of functional legacies — built to explain why the work deserves trust before it asks for attention.</p>
         </div>
       </section>
 
-      <section className="section" style={sectionStyle}>
-        <div className="container" style={sectionWrapStyle}>
+      <section className="section mk-story-section">
+        <div className="container mk-story-wrap">
           <LuxuryText label="FIELD FOUNDATION" title={<>BEFORE THE FORGE,<br />THERE WAS THE FIELD</>}>
             Working under the name Mo since 2015, I built my foundation in the field first — where a knife had to be more than sharp; it had to be dependable.
           </LuxuryText>
-          <figure style={mediaStyle}>
-            <img src={asset('media/pages/why-mo/hero/why-mo-hero-main-desktop-v1.avif')} alt="Why Mo atmosphere and workshop origin" style={imageContentStyle} />
+          <figure className="mk-story-media">
+            <img src={asset('media/pages/why-mo/hero/why-mo-hero-main-desktop-v1.avif')} alt="Why Mo atmosphere and workshop origin" />
           </figure>
           <LuxuryText label="FIELD STANDARD" title="WHERE THE WORLDS MEET">
             That same standard later found its way into the culinary world through co-founding ECC as Master Bladesmith and designer, creating for renowned chefs and some of the most exacting fine-dining, steakhouse, and Japanese culinary environments. Mo Knives exists where those worlds meet: raw durability, disciplined craftsmanship, and purpose without pretense.
@@ -264,13 +62,13 @@ export default function WhyMoPage() {
         </div>
       </section>
 
-      <section className="section alt" style={sectionStyle}>
-        <div className="container" style={sectionWrapStyle}>
+      <section className="section alt mk-story-section">
+        <div className="container mk-story-wrap">
           <LuxuryText label="CRAFT LOGIC" title="THE LOGIC OF THE BLADE">
             Thermal refinement is tuned for resilience, retention, and the task the blade is expected to survive. Numbers without context are theater. The meaningful question is whether hardness, toughness, and stability serve the knife’s intended work.
           </LuxuryText>
-          <figure style={mediaStyle}>
-            <img src={asset('media/pages/why-mo/process/why-mo-process-heat-treatment-desktop-v1.avif')} alt="Precision heat treatment and blade logic detail" style={imageContentStyle} />
+          <figure className="mk-story-media">
+            <img src={asset('media/pages/why-mo/process/why-mo-process-heat-treatment-desktop-v1.avif')} alt="Precision heat treatment and blade logic detail" />
           </figure>
           <LuxuryText label="GEOMETRY DECIDES" title="EVERY LINE HAS TO JUSTIFY ITSELF">
             From edge thickness to grind choice, every line has to justify itself in contact. A knife can be beautifully finished and still feel wrong in the cut. Geometry is what decides resistance, bite, food release, durability, and control.
@@ -278,13 +76,13 @@ export default function WhyMoPage() {
         </div>
       </section>
 
-      <section className="section" style={sectionStyle}>
-        <div className="container" style={sectionWrapStyle}>
+      <section className="section mk-story-section">
+        <div className="container mk-story-wrap">
           <LuxuryText label="PERFORMANCE PROOF" title={<>NO THEATER. ONLY<br />PERFORMANCE.</>}>
             No cosmetic excess. No empty claims. Only honest construction that earns trust when the blade meets real resistance.
           </LuxuryText>
-          <figure style={videoMediaStyle}>
-            <video autoPlay muted loop playsInline preload="metadata" poster={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-poster-desktop-v1.jpg')} aria-label="Performance proof cutting test video" style={videoContentStyle}>
+          <figure className="mk-story-media mk-story-media--video">
+            <video autoPlay muted loop playsInline preload="metadata" poster={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-poster-desktop-v1.jpg')} aria-label="Performance proof cutting test video">
               <source src={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-desktop-v1.mp4')} type="video/mp4" />
             </video>
           </figure>
@@ -294,13 +92,13 @@ export default function WhyMoPage() {
         </div>
       </section>
 
-      <section className="section alt" style={sectionStyle}>
-        <div className="container" style={sectionWrapStyle}>
+      <section className="section alt mk-story-section">
+        <div className="container mk-story-wrap">
           <LuxuryText label="PROCESS PROOF" title={<>BUILT IN STAGES,<br />PROVEN IN CONTACT</>}>
             Forging, grinding, heat treatment, sharpening, and testing are not decorative chapters. They are the controlled sequence that turns material into a dependable tool.
           </LuxuryText>
-          <figure style={mediaStyle}>
-            <img src={asset('media/pages/why-mo/process/why-mo-process-grinding-desktop-v1.png')} alt="Grinding and process proof inside the Mo workshop" style={imageContentStyle} />
+          <figure className="mk-story-media">
+            <img src={asset('media/pages/why-mo/process/why-mo-process-grinding-desktop-v1.png')} alt="Grinding and process proof inside the Mo workshop" />
           </figure>
           <LuxuryText label="CONTROLLED SEQUENCE" title="EACH STAGE SUPPORTS THE NEXT">
             Each stage has to support the next: the profile must serve the hand, the grind must serve the cut, the heat treatment must serve the steel, and the final edge must serve real use.
@@ -308,13 +106,13 @@ export default function WhyMoPage() {
         </div>
       </section>
 
-      <section className="section" style={sectionStyle}>
-        <div className="container" style={sectionWrapStyle}>
+      <section className="section mk-story-section">
+        <div className="container mk-story-wrap">
           <LuxuryText label="TRUST LAYER" title={<>FUNCTIONAL LEGACIES,<br />NOT DECORATIVE CLAIMS</>}>
             ABS Member. Forging since 2015 under the name Mo. Building for the wild, the mission, the kitchen, and the long life of an heirloom.
           </LuxuryText>
-          <figure style={mediaStyle}>
-            <img src={asset('media/pages/why-mo/proof/why-mo-proof-abs-member-desktop-v1.svg')} alt="ABS member and trust proof for Mo Knives" style={absBadgeImageStyle} />
+          <figure className="mk-story-media mk-story-media--contain">
+            <img src={asset('media/pages/why-mo/proof/why-mo-proof-abs-member-desktop-v1.svg')} alt="ABS member and trust proof for Mo Knives" />
           </figure>
           <LuxuryText label="DETAILS EARN THEIR PLACE" title="CONSTRUCTION. CONTROL. PROOF.">
             The goal is not to make every blade feel dramatic. The goal is to make every detail earn its place through construction, control, and proof.
@@ -322,12 +120,12 @@ export default function WhyMoPage() {
         </div>
       </section>
 
-      <section className="request-panel" style={{ overflowX: 'hidden' }}>
-        <div style={{ ...luxuryPanelStyle, maxWidth: '880px' }}>
-          <p style={kickerStyle}>NEXT STEP</p>
-          <h2 style={{ ...sectionTitleStyle, textAlign: 'center', marginInline: 'auto' }}>ENTER THE VAULT</h2>
+      <section className="request-panel">
+        <div className="mk-luxury-panel" style={{ maxWidth: '880px' }}>
+          <p className="mk-premium-label">NEXT STEP</p>
+          <h2 className="mk-story-title" style={{ textAlign: 'center', marginInline: 'auto' }}>ENTER THE VAULT</h2>
           <OrnateDivider centered />
-          <p style={heroCopyStyle}>Now that the reason is clear, enter the record. The Vault shows the real work that came out of this standard — the blades, the worlds they belong to, and the proof behind them.</p>
+          <p className="mk-premium-centered-copy">Now that the reason is clear, enter the record. The Vault shows the real work that came out of this standard — the blades, the worlds they belong to, and the proof behind them.</p>
           <a href="/the-vault" className="button-primary" style={{ marginTop: 'clamp(24px, 5vw, 34px)' }}>ENTER THE VAULT</a>
         </div>
       </section>
