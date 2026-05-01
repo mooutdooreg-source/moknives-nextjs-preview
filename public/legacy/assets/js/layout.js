@@ -209,3 +209,18 @@
 })();
 
 
+
+document.addEventListener("click", function (event) {
+  const link = event.target.closest("a[href]");
+  if (!link) return;
+
+  const href = link.getAttribute("href");
+  if (!href) return;
+
+  const isInternalRoute = href.startsWith("/") && !href.startsWith("//");
+
+  if (isInternalRoute && window.parent && window.parent !== window) {
+    event.preventDefault();
+    window.parent.location.href = href;
+  }
+});
