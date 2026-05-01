@@ -43,12 +43,14 @@ const sectionWrapStyle: CSSProperties = {
   margin: '0 auto',
   display: 'grid',
   gap: 'clamp(18px, 4vw, 32px)',
+  justifyItems: 'stretch',
 };
 
 const textPanelStyle: CSSProperties = {
   position: 'relative',
   width: '100%',
   maxWidth: '100%',
+  margin: 0,
   padding: 'clamp(22px, 5vw, 46px) clamp(18px, 5vw, 54px)',
   border: '1px solid rgba(240,162,15,0.18)',
   borderRadius: 'clamp(22px, 5vw, 36px)',
@@ -114,8 +116,10 @@ const heroCopyStyle: CSSProperties = {
 
 const mediaStyle: CSSProperties = {
   position: 'relative',
+  display: 'block',
   width: '100%',
   maxWidth: '100%',
+  margin: 0,
   aspectRatio: '4 / 5',
   minHeight: 0,
   overflow: 'hidden',
@@ -134,6 +138,7 @@ const imageContentStyle: CSSProperties = {
 
 const videoMediaStyle: CSSProperties = {
   ...mediaStyle,
+  margin: 0,
   aspectRatio: '16 / 9',
   background: '#050505',
 };
