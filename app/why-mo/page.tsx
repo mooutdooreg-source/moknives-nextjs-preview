@@ -5,6 +5,25 @@ export default function WhyMoPage() {
     <main className="page-shell">
       <section className="section page-hero-simple">
         <div className="container section-heading-center">
+          <figure
+            className="why-mo-hero-badge"
+            style={{
+              width: 'min(170px, 42vw)',
+              margin: '0 auto 22px',
+              filter: 'drop-shadow(0 18px 34px rgba(0, 0, 0, 0.42)) drop-shadow(0 0 24px rgba(240, 162, 15, 0.14))',
+              opacity: 0.96,
+            }}
+          >
+            <img
+              src={asset('media/pages/why-mo/hero/why-mo-hero-custom-maker-bladesmith-badge-desktop-v1.png')}
+              alt="Custom knife maker and bladesmith badge"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+              }}
+            />
+          </figure>
           <p className="section-label">WHY MO / ORIGIN</p>
           <h1 className="section-title page-title">WHY MO</h1>
           <p className="section-copy centered-copy">My work did not begin at the anvil. It began in the field — as a hunter, angler, and open-fire cook — shaped by the demanding reality of use.</p>
