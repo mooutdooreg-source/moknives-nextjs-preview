@@ -1,0 +1,202 @@
+/* Home Editorial Luxury overrides
+   Goal: show original imagery clearly, keep text readable, and avoid heavy black card repetition. */
+
+.mk-premium-page {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(240,162,15,0.10), transparent 24%),
+    linear-gradient(180deg, #030303 0%, #090604 42%, #030303 100%);
+}
+
+.mk-premium-frame {
+  gap: clamp(22px, 4vw, 34px);
+}
+
+.mk-premium-hero,
+.mk-premium-card {
+  border-color: rgba(240,162,15,0.28);
+  background: #050505;
+  box-shadow: 0 26px 80px rgba(0,0,0,0.36), inset 0 1px 0 rgba(255,255,255,0.07);
+}
+
+.mk-premium-hero__bg {
+  opacity: 1;
+  filter: brightness(0.98) contrast(1.02) saturate(0.98);
+}
+
+.mk-premium-hero__shade {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.42) 42%, rgba(0,0,0,0.10) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.20) 52%, rgba(0,0,0,0.62) 100%);
+}
+
+.mk-premium-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mk-premium-hero__inner::before,
+.mk-premium-card__content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 1px solid rgba(240,162,15,0.16);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(240,162,15,0.12), transparent 36%),
+    linear-gradient(145deg, rgba(0,0,0,0.64), rgba(0,0,0,0.34));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 22px 60px rgba(0,0,0,0.28);
+  backdrop-filter: blur(8px);
+}
+
+.mk-premium-hero__inner {
+  max-width: min(680px, calc(100% - 34px));
+  margin-left: clamp(18px, 6vw, 70px);
+  margin-right: auto;
+  padding: clamp(26px, 5vw, 48px);
+}
+
+.mk-premium-title {
+  font-size: clamp(46px, 8vw, 88px);
+  line-height: 0.98;
+  text-shadow: 0 18px 34px rgba(0,0,0,0.70);
+}
+
+.mk-premium-copy,
+.mk-premium-section-copy {
+  color: rgba(255,255,255,0.88);
+}
+
+.mk-premium-card {
+  min-height: clamp(420px, 56vw, 560px);
+}
+
+.mk-premium-card__bg {
+  opacity: 1;
+  filter: brightness(0.94) contrast(1.04) saturate(0.98);
+  transform: scale(1.01);
+}
+
+.mk-premium-card__shade {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.34) 50%, rgba(0,0,0,0.08) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.22) 52%, rgba(0,0,0,0.72) 100%);
+}
+
+.mk-premium-card__content {
+  position: relative;
+  justify-content: flex-end;
+  min-height: inherit;
+  max-width: min(600px, calc(100% - 28px));
+  margin: clamp(18px, 4vw, 34px);
+  padding: clamp(22px, 5vw, 38px);
+}
+
+.mk-premium-card__content .button-primary,
+.mk-premium-actions .button-primary,
+.mk-premium-actions .button-secondary {
+  min-height: 44px;
+  padding-inline: 22px;
+}
+
+.mk-premium-section-title {
+  font-size: clamp(32px, 6.6vw, 58px);
+  line-height: 1.05;
+  text-shadow: 0 16px 30px rgba(0,0,0,0.68);
+}
+
+.mk-premium-label {
+  color: #f0a20f;
+  text-shadow: 0 0 16px rgba(240,162,15,0.18);
+}
+
+.mk-premium-limited {
+  background:
+    radial-gradient(circle at 82% 28%, rgba(240,162,15,0.20), transparent 30%),
+    radial-gradient(circle at 18% 88%, rgba(217,119,6,0.12), transparent 30%),
+    linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.018));
+}
+
+#request.mk-premium-section {
+  display: none;
+}
+
+.mk-premium-proof {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(240,162,15,0.16), transparent 46%),
+    linear-gradient(90deg, rgba(0,0,0,0.86), rgba(24,14,5,0.84));
+}
+
+@media (max-width: 720px) {
+  .mk-premium-frame {
+    width: min(100% - 16px, 520px);
+    gap: 18px;
+  }
+
+  .mk-premium-hero {
+    min-height: 610px;
+  }
+
+  .mk-premium-hero__bg {
+    object-position: center top;
+  }
+
+  .mk-premium-hero__shade {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.20) 30%, rgba(0,0,0,0.68) 100%);
+  }
+
+  .mk-premium-hero__inner {
+    width: auto;
+    max-width: calc(100% - 28px);
+    margin: auto 14px 18px;
+    padding: 22px 18px;
+  }
+
+  .mk-premium-hero__inner::before,
+  .mk-premium-card__content::before {
+    border-radius: 22px;
+    background:
+      radial-gradient(circle at 0% 0%, rgba(240,162,15,0.12), transparent 34%),
+      linear-gradient(145deg, rgba(0,0,0,0.62), rgba(0,0,0,0.38));
+    backdrop-filter: blur(7px);
+  }
+
+  .mk-premium-title {
+    font-size: clamp(39px, 12vw, 54px);
+  }
+
+  .mk-premium-copy,
+  .mk-premium-section-copy {
+    font-size: 14px;
+    line-height: 1.64;
+  }
+
+  .mk-premium-card {
+    min-height: 520px;
+  }
+
+  .mk-premium-card__bg {
+    filter: brightness(0.90) contrast(1.04) saturate(0.98);
+  }
+
+  .mk-premium-card__shade {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.16) 32%, rgba(0,0,0,0.72) 100%);
+  }
+
+  .mk-premium-card__content {
+    max-width: calc(100% - 28px);
+    margin: auto 14px 14px;
+    padding: 22px 18px;
+  }
+
+  .mk-premium-section-title {
+    font-size: clamp(29px, 9vw, 41px);
+  }
+
+  .mk-premium-actions {
+    gap: 10px;
+  }
+}
