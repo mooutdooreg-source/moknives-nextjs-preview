@@ -1,15 +1,5 @@
 const asset = (path: string) => `/assets/${path}`;
 
-const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'The Vault', href: '/the-vault' },
-  { label: 'Why Mo', href: '/why-mo' },
-  { label: 'Limited Drop', href: '#limited-drop' },
-  { label: 'Edge Academy', href: '#edge-academy' },
-  { label: 'Mo Gear', href: '#mo-gear' },
-  { label: 'Contact', href: '#contact' },
-];
-
 const proofItems = [
   { label: 'Field-first design logic', icon: 'field' },
   { label: 'Thermal refinement for real use', icon: 'fire' },
@@ -72,30 +62,6 @@ function ProofIcon({ name }: { name: ProofIconName }) {
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <div className="announcement-bar">
-          <div className="announcement-track">
-            <div className="announcement-copy">Mo Knives — Hand Forged Since 2015</div>
-            <div className="announcement-copy">Field Proven. No Theater.</div>
-            <div className="announcement-copy">Built for Real Use</div>
-          </div>
-        </div>
-
-        <div className="header-row">
-          <a className="brand-lockup" href="/" aria-label="Mo Knives home">
-            <img className="brand-lockup-img" src={asset('media/shared/brand/logo-lockup.svg')} alt="Mo Knives" />
-          </a>
-
-          <nav className="header-nav" aria-label="Primary navigation">
-            {navItems.map((item) => (
-              <a key={item.label} href={item.href} className="nav-link">{item.label}</a>
-            ))}
-          </nav>
-
-          <a href="#request" className="request-button">Request Entry</a>
-        </div>
-      </header>
-
       <section className="hero media-hero">
         <img
           className="hero-bg"
