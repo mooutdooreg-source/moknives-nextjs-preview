@@ -99,61 +99,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="why-mo" className="section">
-        <div className="container split">
-          <div>
-            <p className="section-label">Field Foundation</p>
-            <h2 className="section-title">Before the Forge, There Was the Field</h2>
-            <p className="section-copy">
-              My work did not begin at the anvil. It began in the field — as a hunter, angler, and open-fire cook — shaped by the demanding reality of use.
-            </p>
-            <p className="section-copy">
-              Mo Knives exists where raw durability, disciplined craftsmanship, and purpose meet without pretense.
-            </p>
-          </div>
-
-          <figure className="media-card tall">
-            <img src={asset('media/pages/why-mo/hero/why-mo-hero-main-desktop-v1.avif')} alt="Why Mo atmosphere and workshop origin" />
-          </figure>
-        </div>
-      </section>
-
-      <section className="section alt" id="edge-academy">
-        <div className="container split reverse">
-          <figure className="media-card">
-            <video autoPlay muted loop playsInline preload="metadata" poster={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-poster-desktop-v1.jpg')}>
-              <source src={asset('media/pages/why-mo/proof/why-mo-proof-cut-test-desktop-v1.mp4')} type="video/mp4" />
-            </video>
-          </figure>
-
-          <div>
-            <p className="section-label">Performance Proof</p>
-            <h2 className="section-title">No Theater. Only Performance.</h2>
-            <p className="section-copy">
-              Steel, heat treatment, and geometry only matter when performance confirms them. The bench, the stone, and the cut all have to agree before a theory earns trust.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section process-section">
-        <div className="container section-heading-center">
-          <p className="section-label">Process Proof</p>
-          <h2 className="section-title">Built in Stages, Proven in Contact</h2>
-          <p className="section-copy centered-copy">
-            Forging, grinding, heat treatment, sharpening, and testing are not decorative chapters. They are the controlled sequence that turns material into a dependable tool.
-          </p>
-        </div>
-        <div className="container process-gallery">
-          <figure className="media-card process-card">
-            <img src={asset('media/pages/why-mo/process/why-mo-process-grinding-desktop-v1.png')} alt="Grinding and process proof inside the Mo workshop" />
-          </figure>
-          <figure className="media-card process-card">
-            <img src={asset('media/pages/why-mo/process/why-mo-process-heat-treatment-desktop-v1.avif')} alt="Precision heat treatment detail" />
-          </figure>
-        </div>
-      </section>
-
       <section id="vault" className="section vault-section vault-link-section">
         <div className="container vault-link-card">
           <img className="vault-link-bg" src={asset('media/pages/the-vault/hero/vault-hero-main-desktop-v1.webp')} alt="" />
