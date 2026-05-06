@@ -1,9 +1,16 @@
-import { LegacyFrame } from "../LegacyFrame";
+import { LegacyHtmlPage } from "../LegacyHtmlPage";
 
 export const metadata = {
   title: "Mo Gear | Mo Knives",
 };
 
-export default function Page() {
-  return <LegacyFrame htmlFile="mo-gear.html" route="/mo-gear" />;
+export default function MoGearPage() {
+  return (
+    <LegacyHtmlPage
+      htmlFile="mo-gear.html"
+      route="/mo-gear"
+      pageCss="mo-gear.css"
+      runtime="mo-gear"
+    />
+  );
 }

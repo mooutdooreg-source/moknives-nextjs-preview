@@ -5,6 +5,7 @@ import './no-duplicate-request.css';
 import './premium-system.css';
 import './home-editorial.css';
 import './worlds.css';
+import './edge-academy/edge-academy.css';
 import SiteHeader from './SiteHeader';
 
 export const metadata = {
