@@ -1,22 +1,27 @@
-﻿import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig, globalIgnores } from 'eslint/config';
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextTs from 'eslint-config-next/typescript';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-  {
-    files: ["next-env.d.ts"],
-    rules: {
-      "@typescript-eslint/triple-slash-reference": "off",
-    },
-  },
-];
+const eslintConfig = defineConfig([
+  globalIgnores([
+    '.git/**',
+    '.github/**',
+    '.next/**',
+    '.vscode/**',
+    'assets/**',
+    'node_modules/**',
+    'out/**',
+    'build/**',
+    'partials/**',
+    'public/**',
+    'next-env.d.ts',
+    '**/*.css',
+    '**/*.html',
+    '**/*.json',
+    '**/*.md',
+  ]),
+  ...nextVitals,
+  ...nextTs,
+]);
 
 export default eslintConfig;

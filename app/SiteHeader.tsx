@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const asset = (path: string) => `/assets/${path}`;
@@ -33,9 +34,9 @@ export default function SiteHeader() {
       </div>
 
       <div className="header-row">
-        <a className="brand-lockup" href="/" aria-label="Mo Knives home">
+        <Link className="brand-lockup" href="/" aria-label="Mo Knives home">
           <img className="brand-lockup-img" src={asset('media/shared/brand/logo-lockup.svg')} alt="Mo Knives" />
-        </a>
+        </Link>
 
         <nav className="header-nav" aria-label="Primary navigation">
           {navItems.map((item) => (

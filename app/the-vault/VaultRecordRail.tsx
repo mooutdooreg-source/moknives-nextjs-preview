@@ -76,12 +76,10 @@ export default function VaultRecordRail() {
 
   const openViewer = (index: number) => {
     setViewerIndex(index);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeViewer = () => {
     setViewerIndex(null);
-    document.body.style.overflow = '';
   };
 
   const viewerPrev = () => {
@@ -95,10 +93,12 @@ export default function VaultRecordRail() {
   };
 
   useEffect(() => {
+    document.body.style.overflow = viewerIndex === null ? '' : 'hidden';
+
     return () => {
       document.body.style.overflow = '';
     };
-  }, []);
+  }, [viewerIndex]);
 
   useEffect(() => {
     const rail = railRef.current;
