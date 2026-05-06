@@ -1,9 +1,16 @@
-import { LegacyFrame } from "../LegacyFrame";
+import { LegacyHtmlPage } from "../LegacyHtmlPage";
 
 export const metadata = {
   title: "Limited Drop | Mo Knives",
 };
 
-export default function Page() {
-  return <LegacyFrame htmlFile="limited-drop.html" route="/limited-drop" />;
+export default function LimitedDropPage() {
+  return (
+    <LegacyHtmlPage
+      htmlFile="limited-drop.html"
+      route="/limited-drop"
+      pageCss="limited-drop.css"
+      runtime="limited-drop"
+    />
+  );
 }
