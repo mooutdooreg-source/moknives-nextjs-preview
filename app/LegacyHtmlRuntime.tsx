@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 
 type RuntimeKind =
+  | "contact"
   | "limited-drop"
   | "mo-gear"
   | "record-detail"
@@ -25,6 +26,8 @@ declare global {
       requestHref?: string;
     }>;
     selectPath?: (n: number) => void;
+    revealContactOptions?: () => void;
+    showMessageForm?: () => void;
     submitSuccess?: (event?: Event) => void;
   }
 }
@@ -147,6 +150,35 @@ function setupRequestBlade() {
   };
 }
 
+function setupContact() {
+  window.revealContactOptions = () => {
+    document.getElementById("contact-gate")?.classList.add("hidden");
+    document.getElementById("contact-options")?.classList.remove("hidden");
+  };
+
+  window.showMessageForm = () => {
+    document.getElementById("message-form")?.classList.toggle("hidden");
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const subject = params.get("subject");
+  const message = params.get("message");
+  const autostart = params.get("autostart") === "1";
+  const subjectInput = document.getElementById("contact-subject") as HTMLInputElement | null;
+  const messageInput = document.getElementById("contact-message") as HTMLTextAreaElement | null;
+
+  if (subject && subjectInput) subjectInput.value = subject;
+  if (message && messageInput) messageInput.value = message;
+
+  if (subject || message || autostart) {
+    window.revealContactOptions();
+    document.getElementById("message-form")?.classList.remove("hidden");
+    window.requestAnimationFrame(() => {
+      document.getElementById("message-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+}
+
 function setupSubmitSuccess(message: string, resetForms: boolean) {
   window.submitSuccess = (event?: Event) => {
     if (event) event.preventDefault();
@@ -182,10 +214,11 @@ export function LegacyHtmlRuntime({ route, kind, successMessage }: LegacyHtmlRun
     const cleanupFade = setupFadeUp(root);
 
     if (kind === "limited-drop") setupLimitedDrop(root);
+    if (kind === "contact") setupContact();
     if (kind === "request-a-blade") setupRequestBlade();
 
     if (successMessage) {
-      setupSubmitSuccess(successMessage, kind !== "vanguard-request");
+      setupSubmitSuccess(successMessage, kind !== "vanguard-request" && kind !== "contact");
     }
 
     const run = async () => {
@@ -211,6 +244,10 @@ export function LegacyHtmlRuntime({ route, kind, successMessage }: LegacyHtmlRun
 
     return () => {
       cleanupFade?.();
+      if (kind === "contact") {
+        delete window.revealContactOptions;
+        delete window.showMessageForm;
+      }
       if (kind === "request-a-blade") delete window.selectPath;
       if (successMessage) delete window.submitSuccess;
     };

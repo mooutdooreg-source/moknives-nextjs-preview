@@ -3,6 +3,7 @@ import path from "node:path";
 import { LegacyHtmlRuntime } from "./LegacyHtmlRuntime";
 
 type RuntimeKind =
+  | "contact"
   | "limited-drop"
   | "mo-gear"
   | "record-detail"
@@ -37,6 +38,21 @@ const htmlRoutes: Record<string, string> = {
   "why-mo.html": "/why-mo",
 };
 
+const assetAliases: Record<string, string> = {
+  "images/contact-mobile-menu-background-1.avif": "assets/media/pages/contact/hero/contact-hero-mobile-menu-bg-v1.avif",
+  "images/request-a-blade-mobile-menu-background-1.avif": "assets/media/pages/request-a-blade/hero/request-a-blade-hero-mobile-menu-bg-v1.avif",
+  "images/hero-vault.avif": "assets/media/pages/the-vault/hero/vault-hero-alt-desktop-v1.avif",
+  "images/gear-aprons.avif": "assets/media/pages/mo-gear/products/mo-gear-product-aprons-desktop-v1.avif",
+  "images/gear-bbq.avif": "assets/media/pages/mo-gear/products/mo-gear-product-bbq-desktop-v1.avif",
+  "images/gear-boards.avif": "assets/media/pages/mo-gear/products/mo-gear-product-boards-desktop-v1.avif",
+  "images/gear-gifts.avif": "assets/media/pages/mo-gear/products/mo-gear-product-gifts-desktop-v1.avif",
+  "images/gear-leather.avif": "assets/media/pages/mo-gear/products/mo-gear-product-leather-desktop-v1.avif",
+  "images/gear-maintenance.avif": "assets/media/pages/mo-gear/products/mo-gear-product-maintenance-desktop-v1.avif",
+  "images/gear-sharpening.avif": "assets/media/pages/mo-gear/products/mo-gear-product-sharpening-desktop-v1.avif",
+  "images/gear-shears.avif": "assets/media/pages/mo-gear/products/mo-gear-product-shears-desktop-v1.avif",
+  "assets/media/pages/mo-gear/hero/mo-gear-hero-bg-desktop-v1.mp4": "assets/media/pages/mo-gear/hero/mo-gear-hero-bg-alt-desktop-v1.mp4",
+};
+
 function extractBodyContent(html: string) {
   const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? html;
   const withoutHeader = body.replace(/^\s*<div\s+id=["']site-header["']><\/div>\s*/i, "");
@@ -46,7 +62,13 @@ function extractBodyContent(html: string) {
 }
 
 function normalizeHtml(content: string) {
-  let normalized = content
+  let normalized = content;
+
+  for (const [legacyPath, assetPath] of Object.entries(assetAliases)) {
+    normalized = normalized.split(legacyPath).join(assetPath);
+  }
+
+  normalized = normalized
     .replace(/\b(src|href|poster)=(["'])assets\//g, "$1=$2/assets/")
     .replace(/\b(src|href|poster)=(["'])images\//g, "$1=$2/legacy/images/")
     .replace(/url\((["']?)assets\//g, "url($1/assets/")
