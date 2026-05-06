@@ -8,10 +8,10 @@ const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Why Mo', href: '/why-mo' },
   { label: 'The Vault', href: '/the-vault' },
-  { label: 'Limited Drop', href: '/#limited-drop' },
-  { label: 'Edge Academy', href: '/#edge-academy' },
-  { label: 'Mo Gear', href: '/#mo-gear' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Limited Drop', href: '/limited-drop' },
+  { label: 'Edge Academy', href: '/edge-academy' },
+  { label: 'Mo Gear', href: '/mo-gear' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 function isActive(pathname: string, href: string) {
